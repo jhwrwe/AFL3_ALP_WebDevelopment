@@ -6,6 +6,7 @@ use App\Models\Menu;
 use App\Http\Requests\StoreMenuRequest;
 use App\Http\Requests\UpdateMenuRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -15,12 +16,27 @@ class MenuController extends Controller
         return view('create',compact('Extracurricular'));
     }
     public function store(Request $request){
-        Menu::create([
-            'name'=> $request->name,
-            'price'=> $request->price,
-            'description'=> $request->description,
-            'photo'=> $request->photo,
+        $validateData=$request->validate([
+            'name'=>'required|unique:Menu,max:255',
+            'price'=> 'required|integer',
+            'description'=>'required|string',
+            'photo'=>'image'
         ]);
+        if($request->file('photo')){
+            $validateData['photo'] =$request->file('photo')->store('images',['disk'=>'public']);
+            Menu::create([
+                'name'=> $validateData['name'],
+                'price'=> $validateData['price'],
+                'description'=>  $validateData['description'],
+                'photo'=>  $validateData['photo'],
+            ]);
+        }else{
+            Menu::create([
+                'name'=> $validateData['name'],
+                'price'=> $validateData['price'],
+                'description'=>  $validateData['description'],
+            ]);
+        }
         return redirect()->route('index');
     }
     public function edit($id){
@@ -29,16 +45,42 @@ class MenuController extends Controller
         return view('edit',compact('Extracurricular'),['menuEdit' => $MenuEdit]);
     }
     public function update(Request $request, Menu $menu){
-        $menu->update([
-            'name'=> $request->name,
-            'price'=> $request->price,
-            'description'=> $request->description,
-            'photo'=> $request->photo,
+        $validateData=$request->validate([
+            'name'=>'required|unique:Menu,max:255',
+            'price'=> 'required|integer',
+            'description'=>'required|string',
+            'photo'=>'image'
         ]);
+        if($request->file('photo')){
+            if($menu->photo){
+                Storage::disk('public')->delete($menu->photo);
+            }
+            $validateData['photo'] =$request->file('photo')->store('images',['disk'=>'public']);
+            $menu->update([
+                'name'=> $validateData['name'],
+                'price'=> $validateData['price'],
+                'description'=>  $validateData['description'],
+                'photo'=>  $validateData['photo'],
+
+            ]);
+        }else{
+            $menu->update([
+                'name'=> $validateData['name'],
+                'price'=> $validateData['price'],
+                'description'=>  $validateData['description'],
+           ]);
+        }
+
         return redirect()->route('index');
     }
     public function destroy(Menu $menu){
+        if($menu->photo){
+            if(Storage::disk('public')->exists($menu->photo)){
+                Storage::disk('public')->delete($menu->photo);
+            }
+        }
         $menu->delete();
+
         return redirect()->route('index');
     }
     public function index(Request $request){

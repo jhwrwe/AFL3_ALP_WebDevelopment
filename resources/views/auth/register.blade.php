@@ -82,8 +82,8 @@
                             <label for="photo" class="col-md-4 col-form-label text-md-end">{{ __('photo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="photo" type="text" class="form-control @error('photo') is-invalid @enderror" name="photo" value="{{ old('photo') }}" required autocomplete="photo" autofocus>
-
+                                <img class ="img-preview img-fluid mb-3 col-sm-5">
+                                <input class ="form-control" type ="file" id="photo" name ="photo" accept="image/jpg, image/png, image/jpeg onchange ="previewImage">
                                 @error('photo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -116,4 +116,16 @@
         </div>
     </div>
 </div>
+<script>
+    function previewImage(){
+        const image = document.querySelector('photo');
+        const imgPreview = document.querySelector('.img-preview');
+        imgPreview.style.display = 'block';
+        const oFReader = new FileReader();
+        ofReader.readAsDataURL(image.files[0]);
+        ofReader.onload = function (oFREvent){
+            imgPreview.src = oFRevent.target.result;
+        }
+    }
+    </script>
 @endsection
