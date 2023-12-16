@@ -48,7 +48,7 @@
 
                 </td>
                 <td>
-                    <a href="/menu/edit/{{ $pro['id'] }}">
+                    <a href="{{ route('edit_menu',$pro) }}">
                         <button class="btn btn-info" id="edit" name="edit">Edit</button>
                     </a>
                     <form action="{{ route('menu_destroy', $pro) }}" method="POST">
@@ -57,7 +57,7 @@
                         <button class="btn btn-danger" id="delete" name="delete">Delete</button>
                     </form>
                 </td>
-                <img src="{{ asset('storage/'.$pro->photo) }}" alt="">
+
     @endforeach
 </table>
 

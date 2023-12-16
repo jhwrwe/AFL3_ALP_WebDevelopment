@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
+
      <!-- CSRF Token -->
      <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -31,21 +31,18 @@
         @auth
         @if(Auth::user()->isAdmin())
             <li class="nav-item">
-            <a class="nav-link {{ $ActiveAbout ?? ''}}" href="/tentangkita">About us</a>
+            <a class="nav-link {{ $ActiveAbout ?? ''}}" href="/index">Home</a>
           </li>
         @endif
-        @if(Auth::user()->isAdmin()||Auth::user()->isTeacher())
+        @if(Auth::user()->isAdmin()||Auth::user()->isStaff())
         <li class="nav-item">
-            <a class="nav-link {{ $ActiveContact ?? ''}}" href="/kontakkita">Contact us</a>
+            <a class="nav-link {{ $ActiveContact ?? ''}}" href="/view_menu">Menu</a>
           </li>
         @endif
         <li class="nav-item">
-            <a class="nav-link {{$ActiveProjek ?? ''}}" href="/projekkita">All our project</a>
+            <a class="nav-link {{$ActiveProjek ?? ''}}" href="/view_menu">Menu</a>
           </li>
         @endauth
-        <li class="nav-item">
-          <a class="nav-link {{$ActiveMain ?? ''}}" aria-current="page" href="/">Welcome</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/AFL1">AFL 1 proj</a>
         </li>

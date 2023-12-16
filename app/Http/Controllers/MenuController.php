@@ -39,14 +39,14 @@ class MenuController extends Controller
         }
         return redirect()->route('view_menu');
     }
-    public function edit($id){
-        $MenuEdit = Menu::where('id',$id)->first();
+    public function edit(Menu $menu){
+        $MenuEdit = Menu::where('id',$menu->id)->first();
         // $Extracurricular = Extracurricular::all();
-        return view('edit',['menuEdit' => $MenuEdit]);
+        return view('edit_menu',['menuEdit' => $MenuEdit]);
     }
     public function update(Request $request, Menu $menu){
         $validateData=$request->validate([
-            'name'=>'required|unique:Menu,max:255',
+            'name'=>'required|max:255',
             'price'=> 'required|integer',
             'description'=>'required|string',
             'photo'=>'image'

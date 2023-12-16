@@ -2,7 +2,7 @@
 @section('layout_content')
 
 <div class ="contaianer mt-5">
-  <form action="{{ route('update',$menuEdit) }}" method="POST">
+  <form action="{{ route('menu_update',$menuEdit) }}" method="POST" enctype="multipart/form-data">
     @method('put')
   @csrf
   <div class="mb-3">
@@ -10,18 +10,18 @@
     <input type="text" class="form-control" id="name" name ="name" placeholder="Your name" value="{{ $menuEdit->name}}">
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">phone</label>
-    <input type="number" class="form-control" id="phone" name ="phone" placeholder="Your phone" value="{{ $menuEdit->price }}">
+    <label for="exampleFormControlInput1" class="form-label">price</label>
+    <input type="number" class="form-control" id="price" name ="price" placeholder="Your phone" value="{{ $menuEdit->price }}">
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">sosmed</label>
-    <input type="text" class="form-control" id="sosmed" name ="sosmed" placeholder="Your sosmed" value="{{ $menuEdit->description }}">
+    <label for="exampleFormControlInput1" class="form-label">description</label>
+    <input type="text" class="form-control" id="description" name ="description" placeholder="Your sosmed" value="{{ $menuEdit->description }}">
   </div>
 </div>
 <div class="mb-3">
   <label for ="photo" class ="form-label">Update image</label>
   @if($menuEdit->photo)
-  <img src="{{ asset('storage/'.$menuEdit->photo) }}" alt="{{ $menuEdi->name }}">
+  <img src="{{ asset('storage/'.$menuEdit->photo) }}" alt="{{ $menuEdit->name }}">
   @else
   <img class = "img-preview img-fluid mb-3 col-sm-5">
   @endif
