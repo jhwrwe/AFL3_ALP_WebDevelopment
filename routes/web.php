@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MenuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +32,13 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::get('/view_menu',[MenuController::class,'index'])->middleware('auth')->name('view_menu');
 
+
+Route::get('/create_menu',[MenuController::class,'create'])->middleware('auth')->name('create_menu');
+Route::post('/menu_store',[MenuController::class,'store'])->middleware('auth')->name('menu_store');
+Route::get('/project/edit/{id}', [MenuController::class,'edit'])->middleware('auth')->name('edit');
+Route::put('/update/{student}', [MenuController::class,'update'])->middleware('auth')->name('update');
+Route::delete('/menu_destroy/{student}',[MenuController::class,'destroy'])->middleware('auth')->name('menu_destroy');
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
