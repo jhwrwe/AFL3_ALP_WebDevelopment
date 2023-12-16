@@ -5,62 +5,45 @@ namespace App\Http\Controllers;
 use App\Models\Review;
 use App\Http\Requests\StoreReviewRequest;
 use App\Http\Requests\UpdateReviewRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+    public function store(Request $request){
+        $validateData=$request->validate([
+            'title'=>'required|max:255',
+            'description'=>'required|max:255',
+            'menu_id'=>'required|max:255'
+        ]);
+            Review::create([
+                'title'=> $validateData['title'],
+                'description'=> $validateData['description'],
+                'user_id'=>Auth::id(),
+                'menu_id'=>$validateData['menu_id']
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreReviewRequest $request)
-    {
-        //
-    }
+            ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Review $review)
-    {
-        //
+        return redirect()->route('index');
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Review $review)
-    {
-        //
+    public function destroy(Review $review){
+        $review->delete();
+        return redirect()->route('index');
     }
+    public function update(Request $request, Review $review){
+        $validateData=$request->validate([
+            'title'=>'required|max:255',
+            'description'=>'required|max:255',
+            'menu_id'=>'required|max:255'
+        ]);
+            $review->update([
+                'title'=> $validateData['title'],
+                'description'=> $validateData['description'],
+                'user_id'=>Auth::id(),
+                'menu_id'=>$validateData['menu_id']
+            ]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateReviewRequest $request, Review $review)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Review $review)
-    {
-        //
+        return redirect()->route('index');
     }
 }
