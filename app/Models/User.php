@@ -27,6 +27,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'photo',
+        'gender',
+        'no_telp',
+        'role_id',
+        'is_active',
+        'is_login',
     ];
 
     /**
@@ -58,4 +64,22 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function isAdmin(): bool{
+        if ($this->role_id == 1) {
+            return true;
+    }
+    return false;
+}
+    public function isStaff(): bool{
+    if ($this->role_id == 2) {
+        return true;
+    }
+    return false;
+}
+    public function isUser(): bool{
+    if ($this->role_id == 3) {
+        return true;
+    }
+    return false;
+}
 }
