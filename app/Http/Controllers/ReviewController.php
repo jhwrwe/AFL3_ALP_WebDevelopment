@@ -6,10 +6,15 @@ use App\Models\Review;
 use App\Http\Requests\StoreReviewRequest;
 use App\Http\Requests\UpdateReviewRequest;
 use Illuminate\Http\Request;
+use App\Models\Menu;
 use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
+    public function create(){
+        $Extracurricular = Review::all();
+        return view('index',compact('Extracurricular'));
+    }
     public function store(Request $request){
         $validateData=$request->validate([
             'title'=>'required|max:255',
@@ -26,6 +31,11 @@ class ReviewController extends Controller
             ]);
 
         return redirect()->route('index');
+    }
+    public function edit(Review $review){
+        $ReviewEdit = Menu::where('id',$review->id)->first();
+        // $Extracurricular = Extracurricular::all();
+        return view('edit_menu',['ReviewEdit' => $ReviewEdit]);
     }
     public function destroy(Review $review){
         $review->delete();
