@@ -42,7 +42,7 @@ class MenuController extends Controller
     public function edit($id){
         $MenuEdit = Menu::where('id',$id)->first();
         // $Extracurricular = Extracurricular::all();
-        return view('edit',compact('Extracurricular'),['menuEdit' => $MenuEdit]);
+        return view('edit',['menuEdit' => $MenuEdit]);
     }
     public function update(Request $request, Menu $menu){
         $validateData=$request->validate([
