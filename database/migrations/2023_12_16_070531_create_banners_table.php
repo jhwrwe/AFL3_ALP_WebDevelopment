@@ -11,22 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('banners', function (Blueprint $table) {
             $table->id();
             $table->String('name');
-            $table->integer('price');
-            $table->String('description');
-            $table->String('photo')->nullable();
+            $table->String('Photo');
+            $table->date('starting_time');
+            $table->date('Ending_time');
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('banners');
     }
 };

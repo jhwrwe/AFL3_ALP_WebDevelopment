@@ -12,18 +12,18 @@ class MenuController extends Controller
 {
 
     public function create(){
-        // $Extracurricular = Extracurricular::all();
-        return view('create',compact('Extracurricular'));
+        $Extracurricular = Menu::all();
+        return view('create_menu',compact('Extracurricular'));
     }
     public function store(Request $request){
         $validateData=$request->validate([
-            'name'=>'required|unique:Menu,max:255',
+            'name'=>'required|max:255',
             'price'=> 'required|integer',
             'description'=>'required|string',
             'photo'=>'image'
         ]);
         if($request->file('photo')){
-            $validateData['photo'] =$request->file('photo')->store('images',['disk'=>'public']);
+            $validateData['photo'] =$request->file('photo')->store('images',['disk' => 'public']);
             Menu::create([
                 'name'=> $validateData['name'],
                 'price'=> $validateData['price'],
@@ -37,16 +37,16 @@ class MenuController extends Controller
                 'description'=>  $validateData['description'],
             ]);
         }
-        return redirect()->route('index');
+        return redirect()->route('view_menu');
     }
-    public function edit($id){
-        $MenuEdit = Menu::where('id',$id)->first();
+    public function edit(Menu $menu){
+        $MenuEdit = Menu::where('id',$menu->id)->first();
         // $Extracurricular = Extracurricular::all();
-        return view('edit',compact('Extracurricular'),['menuEdit' => $MenuEdit]);
+        return view('edit_menu',['menuEdit' => $MenuEdit]);
     }
     public function update(Request $request, Menu $menu){
         $validateData=$request->validate([
-            'name'=>'required|unique:Menu,max:255',
+            'name'=>'required|max:255',
             'price'=> 'required|integer',
             'description'=>'required|string',
             'photo'=>'image'
@@ -71,7 +71,7 @@ class MenuController extends Controller
            ]);
         }
 
-        return redirect()->route('index');
+        return redirect()->route('view_menu');
     }
     public function destroy(Menu $menu){
         if($menu->photo){
@@ -81,7 +81,7 @@ class MenuController extends Controller
         }
         $menu->delete();
 
-        return redirect()->route('index');
+        return redirect()->route('view_menu');
     }
     public function index(Request $request){
         if($request->has('search')){
@@ -89,8 +89,7 @@ class MenuController extends Controller
         }else{
             $projek = Menu::paginate(5);
         }
-        return view('index',[
-
+        return view('view_menu',[
             "pagetitle" => "projek",
         "maintitle" => "projek data",
         'projects' => $projek,
