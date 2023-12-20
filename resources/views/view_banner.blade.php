@@ -7,8 +7,8 @@
     <div class="text-end">
         <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
             <div class="btn-group me-2" roles="group" aria-label="Basic Example">
-                <form method="GET" action="{{ route('create_menu') }}">
-                    <button class="btn btn-primary" href="{{ route('create_menu') }}">
+                <form method="GET" action="{{ route('create_banner') }}">
+                    <button class="btn btn-primary" href="{{ route('create_banner') }}">
                         Tambah
                     </button>
                 </form>
@@ -24,22 +24,17 @@
 
 <table class="table table-striped">
     <tr>
-        <th>NO</th>
+        <th>No</th>
         <th>name</th>
-        <th>price</th>
-
-
-        
-        <th>description</th>
-        <th>photo</th>
+        <th>image</th>
+        <th>starting date</th>
+        <th>ending date</th>
         <th>actions</th>
     </tr>
-    @foreach($projects as $pro)
+    @foreach($banner as $pro)
             <tr>
                 <td>{{ $loop->index + 1 }}</td>
-                <td><a href="{{ route('Show_menu_clicked',$pro) }}">{{ $pro['name'] }}</a></td>
-                <td>{{ $pro['price'] }}</td>
-                <td>{{ $pro['description'] }}</td>
+                <td>{{ $pro['name'] }}</td>
                 <td>
                     @if($pro->photo)
                     <div style ="max-height:350px; overflow:hidden">
@@ -50,11 +45,13 @@
                     @endif
 
                 </td>
+                <td>{{ $pro['starting_time'] }}</td>
+                <td>{{ $pro['Ending_time'] }}</td>
                 <td>
-                    <a href="{{ route('edit_menu',$pro) }}">
+                    <a href="{{ route('edit_banner',$pro) }}">
                         <button class="btn btn-info" id="edit" name="edit">Edit</button>
                     </a>
-                    <form action="{{ route('menu_destroy', $pro) }}" method="POST">
+                    <form action="{{ route('banner_destroy', $pro) }}" method="POST">
                         @method('delete')
                         @csrf
                         <button class="btn btn-danger" id="delete" name="delete">Delete</button>
@@ -65,7 +62,7 @@
 </table>
 
 <div>
-    {{ $projects->links() }}
+
 </div>
 
 @endsection

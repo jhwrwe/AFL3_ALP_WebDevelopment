@@ -24,48 +24,48 @@
 
 <table class="table table-striped">
     <tr>
-        <th>NO</th>
+
         <th>name</th>
         <th>price</th>
-
-
-        
         <th>description</th>
         <th>photo</th>
-        <th>actions</th>
     </tr>
-    @foreach($projects as $pro)
             <tr>
-                <td>{{ $loop->index + 1 }}</td>
-                <td><a href="{{ route('Show_menu_clicked',$pro) }}">{{ $pro['name'] }}</a></td>
-                <td>{{ $pro['price'] }}</td>
-                <td>{{ $pro['description'] }}</td>
+
+                <td>{{ $menu['name'] }}</a></td>
+                <td>{{ $menu['price'] }}</td>
+                <td>{{ $menu['description'] }}</td>
                 <td>
-                    @if($pro->photo)
+                    @if($menu->photo)
                     <div style ="max-height:350px; overflow:hidden">
-                        <img src="{{ asset('storage/'.$pro['photo']) }}" alt="{{ $pro->name }}" class="img-fluid">
+                        <img src="{{ asset('storage/'.$menu['photo']) }}" alt="{{ $menu->name }}" class="img-fluid">
                     </div>
                     @else
                         <img src="{{ asset('images/notavailable.jpg') }}" alt="No Image" class="img-fluid">
                     @endif
 
                 </td>
-                <td>
-                    <a href="{{ route('edit_menu',$pro) }}">
-                        <button class="btn btn-info" id="edit" name="edit">Edit</button>
-                    </a>
-                    <form action="{{ route('menu_destroy', $pro) }}" method="POST">
-                        @method('delete')
-                        @csrf
-                        <button class="btn btn-danger" id="delete" name="delete">Delete</button>
-                    </form>
-                </td>
-
-    @endforeach
 </table>
+<div class ="contaianer mt-5">
+    <form action="{{ route('order_store', $menu) }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">tanggal</label>
+      <input type="date" class="form-control" id="tanggal" name ="tanggal" placeholder="Your title">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">location</label>
+      <input type="text" class="form-control" id="location" name ="location" placeholder="Your price">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">quantity</label>
+        <input type="text" class="form-control" id="quantity" name ="quantity" placeholder="Your price">
+      </div>
+    </div>
+    <button type ="submit" class="btn btn-primary">submit</button>
+    </form>
+  </div>
 
-<div>
-    {{ $projects->links() }}
-</div>
+
 
 @endsection

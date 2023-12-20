@@ -1,14 +1,14 @@
-@extends('layouts.template')
+{{-- @extends('layouts.template')
 
 @section('layout_content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('register_admin') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('register_admin') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
@@ -60,6 +60,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
                         <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Choose gender') }}</label>
                         <div class="col-md-6">
                             <select name="gender" id="gender" class="custom-select" required>
@@ -106,4 +107,16 @@
         </div>
     </div>
 </div>
-@endsection
+<script>
+    function previewImage(){
+        const image = document.querySelector('photo');
+        const imgPreview = document.querySelector('.img-preview');
+        imgPreview.style.display = 'block';
+        const oFReader = new FileReader();
+        ofReader.readAsDataURL(image.files[0]);
+        ofReader.onload = function (oFREvent){
+            imgPreview.src = oFRevent.target.result;
+        }
+    }
+    </script>
+@endsection --}}
