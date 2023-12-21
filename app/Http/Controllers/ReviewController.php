@@ -15,19 +15,16 @@ class ReviewController extends Controller
         $Extracurricular = Review::all();
         return view('index',compact('Extracurricular'));
     }
-    public function store(Request $request){
+    public function store(Request $request,Menu $menu){
         $validateData=$request->validate([
             'title'=>'required|max:255',
             'description'=>'required|max:255',
-            'menu_id'=>'required|max:255'
         ]);
             Review::create([
                 'title'=> $validateData['title'],
                 'description'=> $validateData['description'],
                 'user_id'=>Auth::id(),
-                'menu_id'=>$validateData['menu_id']
-
-
+                'menu_id'=>$menu['id']
             ]);
 
         return redirect()->route('index');
@@ -56,4 +53,5 @@ class ReviewController extends Controller
 
         return redirect()->route('index');
     }
+
 }

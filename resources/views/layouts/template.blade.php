@@ -12,7 +12,7 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <style>
-        .bg-c1 {
+        .bg-c1 {    
             background-color: #42332E;
         }
 
@@ -24,9 +24,9 @@
             background-color:
         }
 
-        .bg-mojito {
-            background-color: #fbfff4;
-        }
+                .bg-mojito {
+                    background-color: #fbfff4;
+                }
 
         .border-c1 {
             background-color: #42332E;

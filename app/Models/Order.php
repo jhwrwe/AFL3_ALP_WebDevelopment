@@ -10,8 +10,12 @@ class Order extends Model
     use HasFactory;
     protected $fillable = [
         'tanggal',
-        'lokasi',
+        'location',
         'user_id',
         'status_id',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

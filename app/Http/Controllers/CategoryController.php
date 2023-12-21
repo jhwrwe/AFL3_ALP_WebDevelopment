@@ -23,7 +23,7 @@ class CategoryController extends Controller
                 'title'=> $validateData['name'],
                 'description'=> $validateData['description'],
             ]);
-
+            
         return redirect()->route('index');
     }
     public function edit(Category $category){

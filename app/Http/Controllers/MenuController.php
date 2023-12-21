@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\User;
 use App\Http\Requests\StoreMenuRequest;
 use App\Http\Requests\UpdateMenuRequest;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,6 +18,7 @@ class MenuController extends Controller
         return view('create_menu',compact('Extracurricular'));
     }
     public function store(Request $request){
+        dd($request);
         $validateData=$request->validate([
             'name'=>'required|max:255',
             'price'=> 'required|integer',
@@ -98,10 +101,30 @@ class MenuController extends Controller
     }
     public function clickedid($id){
         $menu = Menu::find($id);
-            return view('show',[
+        $reviews = Review::with('user')->get();
+            return view('show_menu_clicked',[
                 'pagetitle' => 'project',
                 'maintitle' => 'project Data',
                 'menu'=> $menu,
+                'reviews'=>$reviews,
             ]);
     }
+    public function ordered($id){
+
+        $menu = Menu::find($id);
+        return view('show_menu_ordered',[
+            'pagetitle' => 'project',
+            'maintitle' => 'project Data',
+            'menu'=> $menu,
+        ]);
+    }
+    public function ordered2($id){
+        $menu = Menu::find($id);
+        return view('order_menu_view',[
+            'pagetitle' => 'project',
+            'maintitle' => 'project Data',
+            'menu'=> $menu,
+        ]);
+    }
+
 }
