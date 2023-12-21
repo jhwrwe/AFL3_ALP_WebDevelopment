@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
      <!-- CSRF Token -->
      <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -39,6 +40,12 @@
           <li class="nav-item">
             <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/view_banner">Make banner</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/view_category">Make category</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/view_category_menu">Make category menu</a>
+          </li>
         @endif
         @if(Auth::user()->isAdmin()||Auth::user()->isStaff())
         @endif
@@ -49,6 +56,9 @@
           <li class="nav-item">
               <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/view_order">Cart</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/view_true_menu">view menu</a>
+        </li>
         @endauth
       </ul>
        <!-- Right Side Of Navbar -->
@@ -94,6 +104,7 @@
 
     <h2>@yield('layout_tagline')</h2>
     @yield('layout_content')
+
 </div>
   </body>
 </html>

@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
     public function create(){
         $Extracurricular = Category::all();
-        return view('index',compact('Extracurricular'));
+        return view('create_category',compact('Extracurricular'));
     }
     public function store(Request $request){
         $validateData=$request->validate([
@@ -20,10 +20,10 @@ class CategoryController extends Controller
             'description'=>'required|max:255',
         ]);
             category::create([
-                'title'=> $validateData['name'],
+                'name'=> $validateData['name'],
                 'description'=> $validateData['description'],
             ]);
-            
+
         return redirect()->route('index');
     }
     public function edit(Category $category){
@@ -46,5 +46,19 @@ class CategoryController extends Controller
             ]);
 
         return redirect()->route('index');
+    }
+    public function show(Request $request){
+        if($request->has('search')){
+            $projek = Category::where('name','LIKE','%'.$request->search.'%')->orWhere('description','LIKE','%'.$request->search.'%')->paginate(5)-> withQueryString();
+        }else{
+            $projek = Category::paginate(5);
+            
+        }
+        return view('view_category',[
+            "pagetitle" => "projek",
+        "maintitle" => "projek data",
+        'projects' => $projek,
+        "ActiveProjek"=> "active"
+        ]);
     }
 }
