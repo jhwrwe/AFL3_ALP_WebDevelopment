@@ -1,109 +1,134 @@
 @extends('layouts.template')
 
 @section('layout_content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <style>
+        .mojito {
+            background-color: #fbfff4;
+        }
+    </style>
+    {{-- <section class="vh-100 bg-image"
+        style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');"> --}}
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+    <div class="mask d-flex align-items-center h-100 mojito">
+        <div class="container h-100">
+            <br>
+            <br>
+            <br>
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <div class="card-body p-5">
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                            <h2 class="text-uppercase text-center mb-5">Buat Akun</h2>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                                @csrf
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-                        <label for="gender" class="col-md-4 col-form-label text-md-end">{{ __('Choose gender') }}</label>
-                        <div class="col-md-6">
-                            <select name="gender" id="gender" class="custom-select" required>
-                                <option value="female">Female</option>
-                                <option value="male">Male</option>
-                                <option value="others">Others</option>
-                            </select>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="photo" class="col-md-4 col-form-label text-md-end">{{ __('photo') }}</label>
-
-                            <div class="col-md-6">
-                                <img class ="img-preview img-fluid mb-3 col-sm-5">
-                                <input class ="form-control" type ="file" id="photo" name ="photo" accept="image/jpg, image/png, image/jpeg onchange ="previewImage">
-                                @error('photo')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                            <div class="row mb-3">
-                                <label for="no_telp" class="col-md-4 col-form-label text-md-end">{{ __('no_telp') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="no_telp" type="text" class="form-control @error('no_telp') is-invalid @enderror" name="no_telp" value="{{ old('no_telp') }}" required autocomplete="no_telp" autofocus>
-
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="name">Nama</label>
+                                    <input type="text" id="name" name="name"
+                                        class="form-control form-control-lg @error('name') is-invalid @enderror"
+                                        value="{{ old('name') }}" required autofocus />
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="no_telp">Nomor Telepon</label>
+                                    <input id="no_telp" type="text"
+                                        class="form-control @error('no_telp') is-invalid @enderror" name="no_telp"
+                                        value="{{ old('no_telp') }}" required autocomplete="no_telp" autofocus>
                                     @error('no_telp')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="email">E-mail</label>
+                                    <input type="email" id="email" name="email"
+                                        class="form-control form-control-lg @error('email') is-invalid @enderror"
+                                        value="{{ old('email') }}" required />
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="password">Kata Sandi</label>
+                                    <input type="password" id="password" name="password"
+                                        class="form-control form-control-lg @error('password') is-invalid @enderror"
+                                        required />
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="password-confirm">Ulangi Kata Sandi</label>
+                                    <input type="password" id="password-confirm" name="password_confirmation"
+                                        class="form-control form-control-lg" required />
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label for="gender"
+                                        class="col form-label text-md-end">{{ __('Choose gender') }}</label>
+                                    <div class="col-md-6">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender"
+                                            value="female" />
+                                        <label class="form-check-label" for="femaleGender">Perempuan</label>
+                                    </div>
+                                    <div class="form-check form-check-inline mb-0 me-4">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender"
+                                            value="male" />
+                                        <label class="form-check-label" for="maleGender">Laki-laki</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="photo">Foto Profil</label>
+                                    <input type="file" id="photo" name="photo"
+                                        class="form-control @error('photo') is-invalid @enderror"
+                                        accept="image/jpg, image/png, image/jpeg" onchange="previewImage(this)">
+                                    <img class="img-preview img-fluid mb-3 col-sm-5" style="display: none;">
+                                    @error('photo')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                <div class="row mb-0">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
+            <br>
         </div>
     </div>
-</div>
+    </div>
+
+    <script>
+        function previewImage(input) {
+            var file = input.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('.img-preview').attr('src', e.target.result).show();
+            };
+
+            reader.readAsDataURL(file);
+        }
+    </script>
 @endsection
