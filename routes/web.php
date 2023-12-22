@@ -24,9 +24,9 @@ use App\Livewire\SearchMenu;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [BannerController::class,'index'] );
+
+
 
 Route::view('/index', 'index',[
     "pagetitle" => "projek",

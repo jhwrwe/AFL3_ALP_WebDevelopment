@@ -13,11 +13,10 @@ class BannerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-      $currentDate = now();
-      $activeBanners = Banner::where('starting_time', '<=', $currentDate)->where('Ending_time', '>=',$currentDate)->get();
-      return view('index',['banner' => $activeBanners]);
+    public function index(){
+    $currentDate = now();
+    $activeBanners = Banner::where('starting_time', '<=', $currentDate)->where('Ending_time', '>=',$currentDate)->get();
+    return view('index', ['banner' => $activeBanners]);
     }
 
     public function create(){
