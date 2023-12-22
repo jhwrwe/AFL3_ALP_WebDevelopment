@@ -15,7 +15,7 @@
             }
 
             .bg-fbfff4 {
-                background: #fbfff4;
+                background-color: #fbfff4;
             }
         </style>
     </head>

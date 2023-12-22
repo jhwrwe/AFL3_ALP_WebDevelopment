@@ -1,20 +1,23 @@
 @extends('layouts.template')
 
 @section('layout_content')
+    <section class="h-100" style="background-color: #eee;">
+        <div class="container h-100 py-5">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-10">
 
-<section class="h-100" style="background-color: #eee;">
-  <div class="container h-100 py-5">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-10">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3 class="fw-normal mb-0 text-black">Keranjang Belanja</h3>
+                        <div>
+                            <p class="mb-0"><span class="text-muted">Urutkan Berdasarkan:</span> <a href="#!"
+                                    class="text-body">Harga <i class="fas fa-angle-down mt-1"></i></a></p>
+                        </div>
+                    </div>
 
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
-          <div>
-            <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">time <i
-                  class="fas fa-angle-down mt-1"></i></a></p>
-          </div>
-        </div>
-
+                    <form action="/view_menu" method="GET" class="form-inline w-100 d-flex gap-2 mb-4">
+                        <input class="form-control" type="search" name="search" placeholder="Cari Barang">
+                        <button type="submit" class="btn btn-outline-success">Cari</button>
+                    </form>
 
 
         <table class="table table-striped">
@@ -104,7 +107,13 @@
           @endif
           @endforeach
 
-        </table>
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="https://wa.me/62933152007">
+                                <button type="button" class="btn btn-warning btn-block btn-lg">Bayar</button>
+                            </a>
+                        </div>
+                    </div>
 
         <div class="card">
           <div class="card-body">
