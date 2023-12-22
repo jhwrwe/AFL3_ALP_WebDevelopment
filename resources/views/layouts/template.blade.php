@@ -75,12 +75,25 @@
             background-color: #42332E;
         }
 
-        footer p {
-            color: #CFAC89;
+        /* Additional styles for smooth transition */
+        .navbar {
+            transition: padding 0.3s ease, background-color 0.3s ease;
         }
 
-        footer h6 {
-            color: #CFAC89;
+        .navbar-brand {
+            transition: color 0.3s ease;
+        }
+
+        .navbar-toggler {
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .navbar-toggler-icon {
+            transition: background-color 0.3s ease;
         }
     </style>
 
@@ -121,17 +134,28 @@
                         @endif
                         @if (Auth::user()->isAdmin() || Auth::user()->isStaff())
                         @endif
-                        <li class="nav-item">
-                            <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_true_menu">Menu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_order">Keranjang</a>
-                        </li>
-
+                        @if (Auth::user()->isUser())
+                            <li class="nav-item">
+                                <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_true_menu">Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_order">Keranjang</a>
+                            </li>
+                        @endif
                     @endauth
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/FAQ">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/aboutus">Tentang kita</a>
+                    </li>
 
                 </ul>
                 <!-- Right Side Of Navbar -->
@@ -233,6 +257,9 @@
                             <p>
                                 <a href="#!" class="text-reset">Vue</a>
                             </p>
+                            <p>
+                                <a href="#!" class="text-reset">Laravel</a>
+                            </p>
                         </div>
                         <!-- Grid column -->
 
@@ -244,6 +271,9 @@
                             </h6>
                             <p>
                                 <a href="#!" class="text-reset">Pricing</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Settings</a>
                             </p>
                             <p>
                                 <a href="#!" class="text-reset">Orders</a>
@@ -270,46 +300,46 @@
             </section>
         </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
 
-            const showNavbar = (toggleId, navId, bodyId, headerId) => {
-                const toggle = document.getElementById(toggleId),
-                    nav = document.getElementById(navId),
-                    bodypd = document.getElementById(bodyId),
-                    headerpd = document.getElementById(headerId)
+                const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                    const toggle = document.getElementById(toggleId),
+                        nav = document.getElementById(navId),
+                        bodypd = document.getElementById(bodyId),
+                        headerpd = document.getElementById(headerId)
 
-                // Validate that all variables exist
-                if (toggle && nav && bodypd && headerpd) {
-                    toggle.addEventListener('click', () => {
-                        // show navbar
-                        nav.classList.toggle('show')
-                        // change icon
-                        toggle.classList.toggle('bx-x')
-                        // add padding to body
-                        bodypd.classList.toggle('body-pd')
-                        // add padding to header
-                        headerpd.classList.toggle('body-pd')
-                    })
+                    // Validate that all variables exist
+                    if (toggle && nav && bodypd && headerpd) {
+                        toggle.addEventListener('click', () => {
+                            // show navbar
+                            nav.classList.toggle('show')
+                            // change icon
+                            toggle.classList.toggle('bx-x')
+                            // add padding to body
+                            bodypd.classList.toggle('body-pd')
+                            // add padding to header
+                            headerpd.classList.toggle('body-pd')
+                        })
+                    }
                 }
-            }
 
-            showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+                showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
 
-            /*===== LINK ACTIVE =====*/
-            const linkColor = document.querySelectorAll('.nav_link')
+                /*===== LINK ACTIVE =====*/
+                const linkColor = document.querySelectorAll('.nav_link')
 
-            function colorLink() {
-                if (linkColor) {
-                    linkColor.forEach(l => l.classList.remove('active'))
-                    this.classList.add('active')
+                function colorLink() {
+                    if (linkColor) {
+                        linkColor.forEach(l => l.classList.remove('active'))
+                        this.classList.add('active')
+                    }
                 }
-            }
-            linkColor.forEach(l => l.addEventListener('click', colorLink))
+                linkColor.forEach(l => l.addEventListener('click', colorLink))
 
-            // Your code to run since DOM is loaded and ready
-        });
-    </script>
+                // Your code to run since DOM is loaded and ready
+            });
+        </script>
 
 </body>
 

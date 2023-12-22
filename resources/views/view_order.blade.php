@@ -75,7 +75,6 @@
                                             </a>
                                         </td>
                                     @endif
-
                                 </tr>
                             @else
                                 @if (Auth::user()->isAdmin())
@@ -126,6 +125,7 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
