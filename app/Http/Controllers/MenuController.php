@@ -18,7 +18,7 @@ class MenuController extends Controller
         return view('create_menu',compact('Extracurricular'));
     }
     public function store(Request $request){
-        dd($request);
+
         $validateData=$request->validate([
             'name'=>'required|max:255',
             'price'=> 'required|integer',
@@ -126,5 +126,17 @@ class MenuController extends Controller
             'menu'=> $menu,
         ]);
     }
+    // app/Http/Controllers/MenuController.php
+
+public function search(Request $request)
+{
+    $query = $request->input('search');
+    $menus = Menu::where('name', 'like', "%$query%")
+                 ->orWhere('description', 'like', "%$query%")
+                 ->get();
+
+    return view('view_menu', ['projects' => $menus]);
+}
+
 
 }
