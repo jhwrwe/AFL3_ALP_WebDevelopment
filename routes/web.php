@@ -73,7 +73,7 @@ Route::get('/edit_status/{status}', [StatusController::class,'edit'])->middlewar
 Route::put('/update_status/{status}', [StatusController::class,'update'])->middleware('Admin')->name('status_update');
 Route::delete('/status_destroy/{status}',[StatusController::class,'destroy'])->middleware('Admin')->name('status_destroy');
 
-Route::get('/index',[BannerController::class,'index'])->middleware('Admin')->name('index');
+Route::get('/index',[BannerController::class,'index'])->name('index');
 Route::get('/view_banner',[BannerController::class,'show'])->middleware('Admin')->name('view_banner');
 Route::get('/create_banner',[BannerController::class,'create'])->middleware('Admin')->name('create_banner');
 Route::post('/banner_store',[BannerController::class,'store'])->middleware('Admin')->name('banner_store');

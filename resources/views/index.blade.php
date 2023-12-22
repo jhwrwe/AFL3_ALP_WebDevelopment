@@ -24,6 +24,15 @@
         <br>
         <br>
         <br>
+        @foreach($banner as $singleBanner)
+    @if($singleBanner->photo)
+        <div style ="max-height:350px; overflow:hidden">
+            <img src="{{ asset('storage/'.$singleBanner->photo) }}" alt="{{ $singleBanner->name }}" class="img-fluid">
+        </div>
+    @else
+        <img src="{{ asset('images/notavailable.jpg') }}" alt="No Image" class="img-fluid">
+    @endif
+@endforeach
         <div class="w-full bg-cover bg-center" style="height: 32rem; background-image: url(image/Banner1.jpg);">
             <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
                 <div class="text-center">

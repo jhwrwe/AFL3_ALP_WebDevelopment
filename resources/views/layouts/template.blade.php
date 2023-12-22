@@ -385,6 +385,9 @@
                         <li class="nav-item">
                             <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/view_category_menu">category menu</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/view_menu">menu</a>
+                        </li>
                     @endif
                     @if(Auth::user()->isAdmin()||Auth::user()->isStaff())
                     @endif
@@ -395,6 +398,9 @@
                         <a class="nav-link {{$ActiveAFL1 ?? ''}}" href="/view_true_menu">menu</a>
                     </li>
                     @endauth
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? ''}}" href="/index">Home</a>
+                    </li>
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">
