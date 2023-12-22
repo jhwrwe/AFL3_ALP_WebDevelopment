@@ -149,12 +149,6 @@
                     <li class="nav-item">
                         <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/FAQ">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/aboutus">Tentang kita</a>
-                    </li>
 
                 </ul>
                 <!-- Right Side Of Navbar -->

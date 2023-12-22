@@ -10,8 +10,30 @@
         <title>Homepage</title>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
         <style>
-            .gradient {
-                background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+            .menu-title-container {
+                margin-top: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menu-title {
+                position: relative;
+                font-size: 2rem; /* Adjust the font size as needed */
+            }
+
+            .menu-title::after {
+                content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            /* Adjust the distance between the text and the underline */
+            width: 100%;
+            height: 5px;
+            /* Adjust the thickness of the underline */
+            background: linear-gradient(to right, #cfac89, #98644f, #42332e);
+            border-radius: 10px;
+            /* Adjust the border-radius to make the underline rounded */
             }
         </style>
     </head>
@@ -43,10 +65,11 @@
     </div>
     <section class="border-b py-8">
         <div class="container max-w-5xl mx-auto m-8">
-            <br>
-            <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                Welcome To Our Website
-            </h2>
+            <div class="mb-3 menu-title-container">
+                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 menu-title">
+                    Selamat Datang di Website Kami
+                </h1>
+            </div>
             <div class="w-full mb-4">
                 <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
