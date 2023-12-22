@@ -27,7 +27,7 @@
             </td>
     </table>
 
-
+    @if (Auth::user()->isUser())
     <div class="container mt-5">
         <form action="{{ route('order_store', $menu) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -69,6 +69,6 @@
             });
         });
     </script>
-
+@endif
 
     @endsection

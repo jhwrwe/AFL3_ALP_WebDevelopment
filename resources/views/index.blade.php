@@ -30,7 +30,7 @@
     </head>
 
     <body class="bg-fbfff4">
-        @foreach ($banner as $singleBanner)
+        {{-- @foreach ($banner as $singleBanner)
     @if ($singleBanner->photo)
         <div style="max-height: 350px; overflow: hidden; position: relative;">
             <img src="{{ asset('storage/' . $singleBanner->photo) }}" alt="{{ $singleBanner->name }}" class="img-fluid">
@@ -39,7 +39,7 @@
     @else
         <img src="{{ asset('images/notavailable.jpg') }}" alt="No Image" class="img-fluid">
     @endif
-@endforeach
+@endforeach --}}
 
         <div class="w-full bg-cover bg-center" style="height: 32rem; background-image: url(image/Banner1.jpg);">
         </div>

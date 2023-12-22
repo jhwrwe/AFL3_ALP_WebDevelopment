@@ -49,7 +49,7 @@
                 <td>{{ $pro['Ending_time'] }}</td>
                 <td>
                     <a href="{{ route('edit_banner',$pro) }}">
-                        <button class="btn btn-info" id="edit" name="edit">Edit</button>
+                        <button class="btn btn-info" id="edit_banner" name="edit_banner">edit</button>
                     </a>
                     <form action="{{ route('banner_destroy', $pro) }}" method="POST">
                         @method('delete')
