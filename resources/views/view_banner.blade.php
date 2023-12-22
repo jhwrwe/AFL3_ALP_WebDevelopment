@@ -147,9 +147,8 @@
                             <button class="btn btn-danger" id="delete" name="delete">Delete</button>
                         </form>
                     </div>
-                    @else
-                        <img src="{{ asset('images/notavailable.jpg') }}" alt="No Image" class="img-fluid">
-                    @endif
+                    <img src="src="{{ asset('storage/' . $pro['photo']) }}" alt="{{ $pro->name }}" class="img-fluid">
+
 
                 </td>
                 <td>{{ $pro['starting_time'] }}</td>

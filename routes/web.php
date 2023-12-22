@@ -88,8 +88,6 @@ Route::get('/search-menu', 'MenuController@search')->name('search_menu');
 Route::get('/view_category',[CategoryController::class,'show'])->middleware('Admin')->name('view_category');
 Route::get('/create_category',[CategoryController::class,'create'])->middleware('Admin')->name('create_category');
 Route::post('/category_store',[CategoryController::class,'store'])->middleware('Admin')->name('category_store');
-Route::get('/edit_banner/{banner}', [CategoryController::class,'edit'])->middleware('Admin')->name('edit_banner');
-Route::put('/update_banner/{banner}', [CategoryController::class,'update'])->middleware('Admin')->name('update_banner');
 Route::delete('/category_destroy/{category}',[CategoryController::class,'destroy'])->middleware('Admin')->name('category_destroy');
 
 
