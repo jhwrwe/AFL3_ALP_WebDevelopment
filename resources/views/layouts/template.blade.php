@@ -14,12 +14,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            const body = document.body;
             const navbar = document.querySelector('.navbar');
 
+            // Add class to body on page load
+            body.classList.add('pre-scroll');
+
             window.addEventListener("scroll", function() {
-                if (window.scrollY > 50) {
+                // Check if the user has started scrolling
+                if (window.scrollY > 0) {
+                    // Remove the class from body and update navbar
+                    body.classList.remove('pre-scroll');
                     navbar.classList.add('bg-scrolled', 'fixed-top');
                 } else {
+                    // Add the class to body and update navbar
+                    body.classList.add('pre-scroll');
                     navbar.classList.remove('bg-scrolled', 'fixed-top');
                 }
             });
@@ -47,9 +56,20 @@
             /* Add other custom styling variables here */
         }
 
-        .bg-scrolled {
-            background-color: #CFAC89 !important;
-        }
+        .pre-scroll {
+        background-color: #CFAC89;
+        transition: background-color 2s ease-in-out;
+    }
+
+    .pre-scroll .navbar-brand {
+        color: #42332E; /* Set text color to white before scrolling */
+        transition: color 1s ease-out; /* Smooth transition */
+    }
+
+    .bg-scrolled {
+        background-color: #CFAC89 !important;
+        transition: background-color 1s ease-out;
+    }
 
         .bg-2 {
             background-color: #42332E;
@@ -70,8 +90,8 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid">
-            <img src="/image/Classic.png" alt="Classic Logo" class="img-fluid mr-2" width="50" height="50">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <img src="/image/Classic.png" alt="Classic Logo" class="img-fluid mr-2" width="40" height="50">
+            <a class="navbar-brand" href="#">Classic</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -293,5 +313,5 @@
 
 </body>
 
-
 </html>
+

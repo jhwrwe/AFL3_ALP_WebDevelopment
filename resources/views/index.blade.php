@@ -13,10 +13,6 @@
             .gradient {
                 background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
             }
-
-            .bg-fbfff4 {
-                background-color: #fbfff4;
-            }
             .overlay {
         position: absolute;
         top: 0;
@@ -28,8 +24,6 @@
             }
         </style>
     </head>
-
-    <body class="bg-fbfff4">
         @foreach ($banner as $singleBanner)
     @if ($singleBanner->photo)
         <div style="max-height: 350px; overflow: hidden; position: relative;">
@@ -47,7 +41,7 @@
 
         <div class="relative -mt-12 lg:-mt-24">
         </div>
-        <section class="bg-white border-b py-8">
+        <section class="border-b py-8">
             <div class="container max-w-5xl mx-auto m-8">
                 <br>
                 <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
@@ -94,7 +88,6 @@
                 </div>
             </div>
         </section>
-    </body>
 
     </html>
 @endsection
