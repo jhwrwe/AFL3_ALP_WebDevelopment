@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderMenuController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\CategoryMenuController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CategoryMenuController;
