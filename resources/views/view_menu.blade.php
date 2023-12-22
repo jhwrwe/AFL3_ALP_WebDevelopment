@@ -117,6 +117,7 @@
             <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group me-2" roles="group" aria-label="Basic Example">
                     <form method="GET" action="{{ route('create_menu') }}">
+                        <br>
                         <button class="btn tambah-button" href="{{ route('create_menu') }}">
                             Tambah
                         </button>

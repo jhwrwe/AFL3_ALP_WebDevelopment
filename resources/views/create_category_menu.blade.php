@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('layout_content')
-
+<div>
 <div class="container mt-5">
     <form action="{{ route('category_menu_store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -23,6 +23,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
+</div>
+<br>
 
 @endsection
