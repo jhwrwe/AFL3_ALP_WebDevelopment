@@ -1,7 +1,13 @@
 @extends('layouts.template')
+<style>
+    footer p,
+    footer h6 {
+        color: #CFAC89;
+    }
+</style>
 
 @section('layout_content')
-    <section class="h-100" style="background-color: #eee;">
+    <section class="h-100">
         <div class="container h-100 py-5">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-10">
@@ -18,6 +24,7 @@
                         <input class="form-control" type="search" name="search" placeholder="Cari Barang">
                         <button type="submit" class="btn btn-outline-success">Cari</button>
                     </form>
+
                     <table class="table table-striped">
                         <tr>
                             @if (Auth::user()->isAdmin())
@@ -118,12 +125,14 @@
                                 @endif
                             @endif
                         @endforeach
-                        <div class="card">
-                            <div class="card-body">
-                                <a href="https://wa.me/62933152007">
-                                    <button type="button" class="btn btn-warning btn-block btn-lg">Bayar</button>
-                                </a>
-                            </div>
+                    </table>
+
+                    <!-- Move the div outside the foreach loop -->
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="https://wa.me/62933152007">
+                                <button type="button" class="btn btn-warning btn-block btn-lg">Bayar</button>
+                            </a>
                         </div>
                     </div>
                 </div>

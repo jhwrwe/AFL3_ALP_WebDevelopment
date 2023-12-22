@@ -2,13 +2,9 @@
 
 @section('layout_content')
     <style>
-          body {
-            background: #f4f4f4;
-            font-family: 'Roboto', sans-serif;
-        }
 
         .container {
-            background: #fff;
+            background: #feeedd;
             border-radius: 8px;
             padding: 20px;
             margin-top: 20px;
@@ -38,7 +34,7 @@
         }
 
         .product {
-            background: #fff;
+            background: #feeedd;
             border-radius: 8px;
             padding: 20px;
             width: 48%; /* Adjust the width as needed */
@@ -87,7 +83,7 @@
         }
 
         .review-section {
-            background-color: #d2d2d2;
+            background-color: #eaccad;
             padding: 4rem 1rem;
             text-align: center;
         }

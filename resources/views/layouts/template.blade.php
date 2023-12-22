@@ -19,17 +19,17 @@
 
             // Add class to body on page load
             body.classList.add('pre-scroll');
-
             window.addEventListener("scroll", function() {
                 // Check if the user has started scrolling
                 if (window.scrollY > 0) {
                     // Remove the class from body and update navbar
-                    body.classList.remove('pre-scroll');
+                    body.classList.add('pre-scroll');
                     navbar.classList.add('bg-scrolled', 'fixed-top');
                 } else {
                     // Add the class to body and update navbar
                     body.classList.add('pre-scroll');
                     navbar.classList.remove('bg-scrolled', 'fixed-top');
+                    navbar.classList.add('bg-unscrolled')
                 }
             });
         });
@@ -44,32 +44,31 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <style>
-        :root {
-            --header-height: 3rem;
-            --nav-width: 68px;
-            --first-color: #4723D9;
-            --first-color-light: #AFA5D9;
-            --white-color: #F7F6FB;
-            --body-font: 'Nunito', sans-serif;
-            --normal-font-size: 1rem;
-            --z-fixed: 100;
-            /* Add other custom styling variables here */
+        footer p,
+        footer h6 {
+            color: #CFAC89;
         }
 
         .pre-scroll {
-        background-color: #CFAC89;
-        transition: background-color 2s ease-in-out;
-    }
+            background-color: #fff5ea;
+        }
 
-    .pre-scroll .navbar-brand {
-        color: #42332E; /* Set text color to white before scrolling */
-        transition: color 1s ease-out; /* Smooth transition */
-    }
+        .pre-scroll .navbar-brand {
+            color: #42332E;
+            /* Set text color to white before scrolling */
+            transition: color 1s ease-out;
+            /* Smooth transition */
+        }
 
-    .bg-scrolled {
-        background-color: #CFAC89 !important;
-        transition: background-color 1s ease-out;
-    }
+        .bg-unscrolled {
+            background-color: #fff5ea !important;
+            transition: background-color 1s ease-out;
+        }
+
+        .bg-scrolled {
+            background-color: #CFAC89 !important;
+            transition: background-color 1s ease-out;
+        }
 
         .bg-2 {
             background-color: #42332E;
@@ -344,4 +343,3 @@
 </body>
 
 </html>
-
