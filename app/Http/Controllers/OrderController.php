@@ -38,7 +38,7 @@ class OrderController extends Controller
                 'menu_id'=>$menu['id']
             ]);
 
-           return redirect()->route('order_menu_view', $menu->id);
+           return redirect()->route('view_order');
     }
     public function edit(Order $order){
         $OrderEdit = Order::where('id',$order->id)->first();

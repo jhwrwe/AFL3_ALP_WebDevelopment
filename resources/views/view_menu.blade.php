@@ -2,8 +2,8 @@
 
 @section('layout_content')
 <!-- Original view: resources/views/layouts/template.blade.php -->
-
-@include('search')
+{{--
+@include('search') --}}
 <div class="container mt-5 mb-5">
     <h1>Your Projects</h1>
     <div class="text-end">

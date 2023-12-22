@@ -10,7 +10,7 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\CategoryMenuController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CategoryMenuController;
+
 use App\Livewire\SearchMenu;
 
 /*
