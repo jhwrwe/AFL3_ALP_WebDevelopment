@@ -10,6 +10,7 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\CategoryMenuController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Livewire\SearchMenu;
 
 /*
@@ -99,6 +100,11 @@ Route::delete('/category_menu_destroy/{category_menu}',[CategoryController::clas
 
 
 Route::get('/view_true_menu',[CategoryMenuController::class,'showtrue'])->middleware('auth')->name('view_true_menu');
+
+
+Route::get('/FAQ',[HomeController::class,'FAQ'])->name('FAQ');
+Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
+
 
 Route::group(['middleware'=>'Admin','prefix'=> 'Admin','as'=>'Admin'], function () {
 

@@ -401,6 +401,12 @@
                     <li class="nav-item">
                         <a class="nav-link {{ $ActiveAbout ?? ''}}" href="/index">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? ''}}" href="/FAQ">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? ''}}" href="/aboutus">About us</a>
+                    </li>
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">

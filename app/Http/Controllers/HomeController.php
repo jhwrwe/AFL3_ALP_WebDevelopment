@@ -25,4 +25,18 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function FAQ(){
+        return view('FAQ',[
+            "pagetitle" => "projek",
+        "maintitle" => "projek data",
+        "ActiveProjek"=> "active"
+        ]);
+    }
+    public function aboutus(){
+        return view('aboutus',[
+            "pagetitle" => "projek",
+        "maintitle" => "projek data",
+        "ActiveProjek"=> "active"
+        ]);
+    }
 }
