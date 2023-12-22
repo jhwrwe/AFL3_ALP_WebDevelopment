@@ -2,13 +2,8 @@
 
 @section('layout_content')
     <style>
-          body {
-            background: #f4f4f4;
-            font-family: 'Roboto', sans-serif;
-        }
-
         .container {
-            background: #fff;
+            background: #feeedd;
             border-radius: 8px;
             padding: 20px;
             margin-top: 20px;
@@ -38,10 +33,11 @@
         }
 
         .product {
-            background: #fff;
+            background: #feeedd;
             border-radius: 8px;
             padding: 20px;
-            width: 48%; /* Adjust the width as needed */
+            width: 48%;
+            /* Adjust the width as needed */
             margin-bottom: 10px;
             display: flex;
             align-items: center;
@@ -76,18 +72,18 @@
             margin-top: 20px;
         }
 
-        .btn-danger {
-            background-color: #d9534f;
-            border-color: #d9534f;
+        .btn-primary {
+            background-color: #42332e !important;
+            border-color: #42332e !important;
         }
 
-        .btn-danger:hover {
-            background-color: #c9302c;
-            border-color: #c9302c;
+        .btn-primary:hover {
+            background-color: #42332e !important;
+            border-color: #42332e !important;
         }
 
         .review-section {
-            background-color: #d2d2d2;
+            background-color: #eaccad;
             padding: 4rem 1rem;
             text-align: center;
         }
@@ -142,34 +138,34 @@
                 <h3 class="comment-text d-flex justify-content-center align-items-center">Komentar</h3>
             </div>
             @foreach ($reviews as $review)
-            @if ($review->menu_id == $menu->id)
-                <div class="col-md-5 p-4">
-                    <div class="card review-card">
-                        <div class="card-body m-2 review-content">
-                            <div class="row">
-                                <div class="col-lg-3 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
-                                    <img src="{{ asset('storage/'.$review->user->photo) }}"
-                                        class="rounded-circle img-fluid shadow-1 review-avatar"
-                                        alt="user avatar" style="width: 80px; height: 80px;" /> <!-- Adjust width and height as needed -->
-                                </div>
-                                <div class="col-lg-8">
-                                    <p class="text-muted fw-bold mb-4">{{ $review->user->name }}</p>
-                                    <p class="fw-bold lead mb-2 review-author"><strong>{{ $review->title }}</strong></p>
-                                    <p class="fw-bold text-muted mb-0 review-role">{{ $review->description }}</p>
-                                    @if(Auth::id()==$review->user_id)
-                                        <form action="{{ route('review_destroy', $review) }}" method="POST">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="btn btn-danger" id="delete" name="delete">Delete</button>
-                                        </form>
-                                    @endif
+                @if ($review->menu_id == $menu->id)
+                    <div class="col-md-5 p-4">
+                        <div class="card review-card">
+                            <div class="card-body m-2 review-content">
+                                <div class="row">
+                                    <div class="col-lg-3 d-flex justify-content-center align-items-center mb-4 mb-lg-0">
+                                        <img src="{{ asset('storage/' . $review->user->photo) }}"
+                                            class="rounded-circle img-fluid shadow-1 review-avatar" alt="user avatar"
+                                            style="width: 80px; height: 80px;" /> <!-- Adjust width and height as needed -->
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-muted fw-bold mb-4">{{ $review->user->name }}</p>
+                                        <p class="fw-bold lead mb-2 review-author"><strong>{{ $review->title }}</strong></p>
+                                        <p class="fw-bold text-muted mb-0 review-role">{{ $review->description }}</p>
+                                        @if (Auth::id() == $review->user_id)
+                                            <form action="{{ route('review_destroy', $review) }}" method="POST">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn btn-danger" id="delete" name="delete">Delete</button>
+                                            </form>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endif
-        @endforeach
+                @endif
+            @endforeach
 
         </div>
     </div>
@@ -184,7 +180,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <input type="text" class="form-control" id="description" name="description" placeholder="Your description">
+                    <input type="text" class="form-control" id="description" name="description"
+                        placeholder="Your description">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

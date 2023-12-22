@@ -14,13 +14,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            const body = document.body;
             const navbar = document.querySelector('.navbar');
 
+            // Add class to body on page load
+            body.classList.add('pre-scroll');
             window.addEventListener("scroll", function() {
-                if (window.scrollY > 50) {
+                // Check if the user has started scrolling
+                if (window.scrollY > 0) {
+                    // Remove the class from body and update navbar
+                    body.classList.add('pre-scroll');
                     navbar.classList.add('bg-scrolled', 'fixed-top');
                 } else {
+                    // Add the class to body and update navbar
+                    body.classList.add('pre-scroll');
                     navbar.classList.remove('bg-scrolled', 'fixed-top');
+                    navbar.classList.add('bg-unscrolled')
                 }
             });
         });
@@ -35,21 +44,30 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <style>
-        :root {
-            --header-height: 3rem;
-            --nav-width: 68px;
-            --first-color: #4723D9;
-            --first-color-light: #AFA5D9;
-            --white-color: #F7F6FB;
-            --body-font: 'Nunito', sans-serif;
-            --normal-font-size: 1rem;
-            --z-fixed: 100;
-            /* Add other custom styling variables here */
+        footer p,
+        footer h6 {
+            color: #CFAC89;
+        }
+
+        .pre-scroll {
+            background-color: #fff5ea;
+        }
+
+        .pre-scroll .navbar-brand {
+            color: #42332E;
+            /* Set text color to white before scrolling */
+            transition: color 1s ease-out;
+            /* Smooth transition */
+        }
+
+        .bg-unscrolled {
+            background-color: #fff5ea !important;
+            transition: background-color 1s ease-out;
         }
 
         .bg-scrolled {
             background-color: #CFAC89 !important;
-            transition: background-color 0.3s ease;
+            transition: background-color 1s ease-out;
         }
 
         .bg-2 {
@@ -84,7 +102,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid">
-            <img src="/image/Classic.png" alt="Classic Logo" class="img-fluid mr-2" width="40" height="40">
+            <img src="/image/Classic.png" alt="Classic Logo" class="img-fluid mr-2" width="40" height="50">
             <a class="navbar-brand" href="#">Classic</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -130,12 +148,6 @@
 
                     <li class="nav-item">
                         <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/FAQ">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/aboutus">Tentang kita</a>
                     </li>
 
                 </ul>
@@ -323,6 +335,5 @@
         </script>
 
 </body>
-
 
 </html>
