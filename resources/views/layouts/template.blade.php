@@ -126,8 +126,6 @@
                                 <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_order">Keranjang</a>
                             </li>
                         @endif
-
-
                     @endauth
 
                     <li class="nav-item">
