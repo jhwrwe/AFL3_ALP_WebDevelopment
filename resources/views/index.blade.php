@@ -39,6 +39,8 @@
     </head>
     <div id="bannerCarousel" class="carousel slide" data-ride="carousel" style="max-height: 500px; overflow: hidden; position: relative;">
         <div class="carousel-inner">
+            @if ($banner->count() > 0)
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             @foreach ($banner as $key => $singleBanner)
                 <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
                     @if ($singleBanner->photo)
@@ -49,6 +51,8 @@
                     @endif
                 </div>
             @endforeach
+            </div>
+            @endif
         </div>
         <button class="carousel-control-prev" type="button" data-target="#bannerCarousel" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
