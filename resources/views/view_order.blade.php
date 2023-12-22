@@ -18,9 +18,6 @@
                         <input class="form-control" type="search" name="search" placeholder="Cari Barang">
                         <button type="submit" class="btn btn-outline-success">Cari</button>
                     </form>
-
-
-
                     <table class="table table-striped">
                         <tr>
                             @if (Auth::user()->isAdmin())
@@ -37,7 +34,7 @@
                         </tr>
 
                         @foreach ($order_menu as $order_menu_item)
-                            @if ($order_menu_item->order && $order_menu_item->order->user_id == Auth::id())
+                            @if ($order_menu_item->order && $order_menu_item->order->user_id == Auth::id() && Auth::id()->isUser())
                                 <tr>
                                     @if (Auth::user()->isAdmin())
                                         <td>
@@ -121,7 +118,6 @@
                                 @endif
                             @endif
                         @endforeach
-
                         <div class="card">
                             <div class="card-body">
                                 <a href="https://wa.me/62933152007">

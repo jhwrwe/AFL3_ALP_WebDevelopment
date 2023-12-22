@@ -17,29 +17,31 @@
             .bg-fbfff4 {
                 background-color: #fbfff4;
             }
+            .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+        z-index: 1;
+            }
         </style>
     </head>
 
     <body class="bg-fbfff4">
-        <br>
-        <br>
-        <br>
-        @foreach($banner as $singleBanner)
-    @if($singleBanner->photo)
-        <div style ="max-height:350px; overflow:hidden">
-            <img src="{{ asset('storage/'.$singleBanner->photo) }}" alt="{{ $singleBanner->name }}" class="img-fluid">
+        @foreach ($banner as $singleBanner)
+    @if ($singleBanner->photo)
+        <div style="max-height: 350px; overflow: hidden; position: relative;">
+            <img src="{{ asset('storage/' . $singleBanner->photo) }}" alt="{{ $singleBanner->name }}" class="img-fluid">
+            <div class="overlay"></div>
         </div>
     @else
         <img src="{{ asset('images/notavailable.jpg') }}" alt="No Image" class="img-fluid">
     @endif
 @endforeach
+
         <div class="w-full bg-cover bg-center" style="height: 32rem; background-image: url(image/Banner1.jpg);">
-            <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
-                <div class="text-center">
-                    <br><br><br><br><br><br><br><br><br><br>
-                    <h1 class="text-white text-2xl font-semibold uppercase md:text-3xl">Welcome to Our Website</h1>
-                </div>
-            </div>
         </div>
 
 
@@ -47,6 +49,7 @@
         </div>
         <section class="bg-white border-b py-8">
             <div class="container max-w-5xl mx-auto m-8">
+                <br>
                 <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                     JUDUL
                 </h2>
