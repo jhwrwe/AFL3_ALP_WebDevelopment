@@ -115,20 +115,25 @@
                         @endif
                         @if (Auth::user()->isAdmin() || Auth::user()->isStaff())
                         @endif
-                        @if (Auth::user()->isUser())
-                            <li class="nav-item">
-                                <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_true_menu">Menu</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_order">Keranjang</a>
                             </li>
-                        @endif
-
 
                     @endauth
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/FAQ">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/aboutus">Tentang kita</a>
+                    </li>
+
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ms-auto">

@@ -37,7 +37,7 @@
                         </tr>
 
                         @foreach ($order_menu as $order_menu_item)
-                            @if ($order_menu_item->order && $order_menu_item->order->user_id == Auth::id() && Auth::user()->isUser())
+                            @if ($order_menu_item->order && $order_menu_item->order->user_id == Auth::id())
                                 <tr>
                                     @if (Auth::user()->isAdmin())
                                         <td>
@@ -78,7 +78,6 @@
                                             </a>
                                         </td>
                                     @endif
-
                                 </tr>
                             @else
                                 @if (Auth::user()->isAdmin())
@@ -130,7 +129,7 @@
                                 </a>
                             </div>
                         </div>
-
+                    </div>
                 </div>
             </div>
         </div>
