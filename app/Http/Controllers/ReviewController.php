@@ -27,7 +27,7 @@ class ReviewController extends Controller
                 'menu_id'=>$menu['id']
             ]);
 
-        return redirect()->route('index');
+        return redirect()->route('Show_menu_clicked',$menu);
     }
     public function edit(Review $review){
         $ReviewEdit = Menu::where('id',$review->id)->first();
@@ -36,7 +36,7 @@ class ReviewController extends Controller
     }
     public function destroy(Review $review){
         $review->delete();
-        return redirect()->route('index');
+        return redirect()->route('view_true_menu');
     }
     public function update(Request $request, Review $review){
         $validateData=$request->validate([
