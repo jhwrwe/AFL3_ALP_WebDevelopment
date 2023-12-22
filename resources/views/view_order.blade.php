@@ -18,9 +18,6 @@
                         <input class="form-control" type="search" name="search" placeholder="Cari Barang">
                         <button type="submit" class="btn btn-outline-success">Cari</button>
                     </form>
-
-
-
                     <table class="table table-striped">
                         <tr>
                             @if (Auth::user()->isAdmin())
@@ -122,7 +119,6 @@
                                 @endif
                             @endif
                         @endforeach
-
                         <div class="card">
                             <div class="card-body">
                                 <a href="https://wa.me/62933152007">
@@ -130,7 +126,6 @@
                                 </a>
                             </div>
                         </div>
-
                 </div>
             </div>
         </div>
