@@ -24,11 +24,11 @@
 
             <table class="table table-striped">
                 <tr>
-                <th>tanggal</th>
-                <th>quantity</th>
-                <th>menu</th>
-                <th>final price</th>
-                <th>status</th>
+                <th>Tanggal</th>
+                <th>Kuantitas</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Status</th>
                 </tr>
             {{-- @foreach ($order_menu  as $order_menu)
 
