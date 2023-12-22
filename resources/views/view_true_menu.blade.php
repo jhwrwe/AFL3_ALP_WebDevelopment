@@ -3,18 +3,7 @@
 @section('layout_content')
 <div class="container mt-5 mb-5">
     <h1>Your Projects</h1>
-    <div class="text-end">
-        <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group me-2" roles="group" aria-label="Basic Example">
-                <form method="GET" action="{{ route('create_category_menu') }}">
-                    <button class="btn btn-primary" href="{{ route('create_category_menu') }}">
-                        Tambah
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="mb-3">
     <form action="{{ route('view_true_menu') }}" method="GET" class="form-inline w-25 d-flex gap-2">

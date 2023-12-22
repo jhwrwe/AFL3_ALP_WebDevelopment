@@ -22,6 +22,9 @@
 
         <table class="table table-striped">
           <tr>
+            @if( Auth::user()->isAdmin())
+            <th>Nama user</th>
+            @endif
             <th>Tanggal</th>
             <th>Kuantitas</th>
             <th>Nama</th>
@@ -33,6 +36,7 @@
           @foreach ($order_menu as $order_menu_item)
           @if($order_menu_item->order && $order_menu_item->order->user_id == Auth::id() && Auth::user()->isUser())
           <tr>
+
             <td>
               @if($order_menu_item->order)
               {{ $order_menu_item->order->tanggal }}
@@ -60,14 +64,13 @@
               @endif
               @endforeach
             </td>
-            <td>
-              <a href="{{ route('edit_status_order',$order_menu_item->order) }}">
-                <button class="btn btn-info" id="edit" name="edit">Edit</button>
-              </a>
-            </td>
+
           </tr>
           @else
           <tr>
+            <td>
+                {{ $order_menu_item->order->user_id }}
+            </td>
             <td>
               @if($order_menu_item->order)
               {{ $order_menu_item->order->tanggal }}

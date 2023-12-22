@@ -10,7 +10,6 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\CategoryMenuController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CategoryMenuController;
 use App\Livewire\SearchMenu;
 
 /*
@@ -43,15 +42,14 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-Route::get('/view_menu',[MenuController::class,'index'])->middleware('auth')->name('view_menu');
+Route::get('/view_menu',[MenuController::class,'index'])->middleware('Admin')->name('view_menu');
 
-
-Route::get('/create_menu',[MenuController::class,'create'])->middleware('auth')->name('create_menu');
-Route::post('/menu_store',[MenuController::class,'store'])->middleware('auth')->name('menu_store');
-Route::get('/edit/{menu}', [MenuController::class,'edit'])->middleware('auth')->name('edit_menu');
+Route::get('/create_menu',[MenuController::class,'create'])->middleware('Admin')->name('create_menu');
+Route::post('/menu_store',[MenuController::class,'store'])->middleware('Admin')->name('menu_store');
+Route::get('/edit/{menu}', [MenuController::class,'edit'])->middleware('Admin')->name('edit_menu');
 Route::get('/menu/{id}',[MenuController::class,'clickedid'])->middleware('auth')->name('Show_menu_clicked');
 Route::get('/menu/ordered/{id}',[MenuController::class,'ordered'])->middleware('auth')->name('show_menu_order');
-Route::put('/update/{menu}', [MenuController::class,'update'])->middleware('auth')->name('menu_update');
+Route::put('/update/{menu}', [MenuController::class,'update'])->middleware('Admin')->name('menu_update');
 Route::delete('/menu_destroy/{menu}',[MenuController::class,'destroy'])->middleware('auth')->name('menu_destroy');
 Auth::routes();
 Route::post('/store_review/{menu}',[ReviewController::class,'store'])->middleware('auth')->name('store_review');
@@ -69,35 +67,35 @@ Route::put('/update_order_status/{order}', [OrderController::class,'update'])->m
 // Route::get('/register_admin_see',[RegisterController::class,'register_admin_view'])->middleware('auth')->name('register_admin_see');
 // Route::post('/register',[RegisterController::class,'register_admin_view'])->middleware('auth')->name('register_admin_see');
 
-Route::get('/view_status',[StatusController::class,'index'])->middleware('auth')->name('view_status');
-Route::post('/Status_store',[StatusController::class,'store'])->middleware('auth')->name('Status_store');
-Route::get('/edit_status/{status}', [StatusController::class,'edit'])->middleware('auth')->name('edit_status');
-Route::put('/update_status/{status}', [StatusController::class,'update'])->middleware('auth')->name('status_update');
-Route::delete('/status_destroy/{status}',[StatusController::class,'destroy'])->middleware('auth')->name('status_destroy');
+Route::get('/view_status',[StatusController::class,'index'])->middleware('Admin')->name('view_status');
+Route::post('/Status_store',[StatusController::class,'store'])->middleware('Admin')->name('Status_store');
+Route::get('/edit_status/{status}', [StatusController::class,'edit'])->middleware('Admin')->name('edit_status');
+Route::put('/update_status/{status}', [StatusController::class,'update'])->middleware('Admin')->name('status_update');
+Route::delete('/status_destroy/{status}',[StatusController::class,'destroy'])->middleware('Admin')->name('status_destroy');
 
-Route::get('/index',[BannerController::class,'index'])->middleware('auth')->name('index');
-Route::get('/view_banner',[BannerController::class,'show'])->middleware('auth')->name('view_banner');
-Route::get('/create_banner',[BannerController::class,'create'])->middleware('auth')->name('create_banner');
-Route::post('/banner_store',[BannerController::class,'store'])->middleware('auth')->name('banner_store');
-Route::get('/edit_banner/{banner}', [BannerController::class,'edit'])->middleware('auth')->name('edit_banner');
-Route::put('/update_banner/{banner}', [BannerController::class,'update'])->middleware('auth')->name('update_banner');
-Route::delete('/banner_destroy/{banner}',[BannerController::class,'destroy'])->middleware('auth')->name('banner_destroy');
+Route::get('/index',[BannerController::class,'index'])->middleware('Admin')->name('index');
+Route::get('/view_banner',[BannerController::class,'show'])->middleware('Admin')->name('view_banner');
+Route::get('/create_banner',[BannerController::class,'create'])->middleware('Admin')->name('create_banner');
+Route::post('/banner_store',[BannerController::class,'store'])->middleware('Admin')->name('banner_store');
+Route::get('/edit_banner/{banner}', [BannerController::class,'edit'])->middleware('Admin')->name('edit_banner');
+Route::put('/update_banner/{banner}', [BannerController::class,'update'])->middleware('Admin')->name('update_banner');
+Route::delete('/banner_destroy/{banner}',[BannerController::class,'destroy'])->middleware('Admin')->name('banner_destroy');
 
 
 Route::get('/search-menu', 'MenuController@search')->name('search_menu');
 
-Route::get('/view_category',[CategoryController::class,'show'])->middleware('auth')->name('view_category');
-Route::get('/create_category',[CategoryController::class,'create'])->middleware('auth')->name('create_category');
-Route::post('/category_store',[CategoryController::class,'store'])->middleware('auth')->name('category_store');
-Route::get('/edit_banner/{banner}', [CategoryController::class,'edit'])->middleware('auth')->name('edit_banner');
-Route::put('/update_banner/{banner}', [CategoryController::class,'update'])->middleware('auth')->name('update_banner');
-Route::delete('/category_destroy/{category}',[CategoryController::class,'destroy'])->middleware('auth')->name('category_destroy');
+Route::get('/view_category',[CategoryController::class,'show'])->middleware('Admin')->name('view_category');
+Route::get('/create_category',[CategoryController::class,'create'])->middleware('Admin')->name('create_category');
+Route::post('/category_store',[CategoryController::class,'store'])->middleware('Admin')->name('category_store');
+Route::get('/edit_banner/{banner}', [CategoryController::class,'edit'])->middleware('Admin')->name('edit_banner');
+Route::put('/update_banner/{banner}', [CategoryController::class,'update'])->middleware('Admin')->name('update_banner');
+Route::delete('/category_destroy/{category}',[CategoryController::class,'destroy'])->middleware('Admin')->name('category_destroy');
 
 
-Route::get('/view_category_menu',[CategoryMenuController::class,'show'])->middleware('auth')->name('view_category_menu');
-Route::get('/create_category_menu',[CategoryMenuController::class,'create'])->middleware('auth')->name('create_category_menu');
-Route::post('/category_menu_store',[CategoryMenuController::class,'store'])->middleware('auth')->name('category_menu_store');
-Route::delete('/category_menu_destroy/{category_menu}',[CategoryController::class,'destroy'])->middleware('auth')->name('category_menu_destroy');
+Route::get('/view_category_menu',[CategoryMenuController::class,'show'])->middleware('Admin')->name('view_category_menu');
+Route::get('/create_category_menu',[CategoryMenuController::class,'create'])->middleware('Admin')->name('create_category_menu');
+Route::post('/category_menu_store',[CategoryMenuController::class,'store'])->middleware('Admin')->name('category_menu_store');
+Route::delete('/category_menu_destroy/{category_menu}',[CategoryController::class,'Admin'])->middleware('auth')->name('category_menu_destroy');
 
 
 Route::get('/view_true_menu',[CategoryMenuController::class,'showtrue'])->middleware('auth')->name('view_true_menu');

@@ -77,7 +77,7 @@
 
             @endforeach
         </table>
-
+        @if(Auth::user()->isUser())
             <div class ="contaianer mt-5">
               <form action="{{ route('store_review',$menu) }}" method="POST" enctype="multipart/form-data">
               @csrf
@@ -94,5 +94,6 @@
               <button type ="submit" class="btn btn-primary">submit</button>
               </form>
             </div>
+            @endif
 
 @endsection
