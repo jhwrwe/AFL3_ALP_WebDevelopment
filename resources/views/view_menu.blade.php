@@ -1,7 +1,9 @@
 @extends('layouts.template')
 
 @section('layout_content')
+<!-- Original view: resources/views/layouts/template.blade.php -->
 
+@include('search')
 <div class="container mt-5 mb-5">
     <h1>Your Projects</h1>
     <div class="text-end">
@@ -17,7 +19,7 @@
     </div>
 </div>
 
-<form action="/view_menu" method="GET" class="form-inline w-25 d-flex gap-2">
+<form action="{{ route('search_menu') }}" method="GET" class="form-inline w-25 d-flex gap-2">
     <input class="form-control" type="search" name="search" placeholder="Search">
     <button type="submit" class="btn btn-outline-success">Search</button>
 </form>
@@ -29,7 +31,7 @@
         <th>price</th>
 
 
-        
+
         <th>description</th>
         <th>photo</th>
         <th>actions</th>

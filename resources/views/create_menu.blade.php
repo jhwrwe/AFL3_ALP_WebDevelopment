@@ -39,6 +39,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2"></script>
+
 <script>
     function previewImage() {
         const image = document.querySelector('#photo');

@@ -8,6 +8,9 @@ use App\Http\Controllers\OrderMenuController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CategoryMenuController;
+use App\Livewire\SearchMenu;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,3 +81,28 @@ Route::post('/banner_store',[BannerController::class,'store'])->middleware('auth
 Route::get('/edit_banner/{banner}', [BannerController::class,'edit'])->middleware('auth')->name('edit_banner');
 Route::put('/update_banner/{banner}', [BannerController::class,'update'])->middleware('auth')->name('update_banner');
 Route::delete('/banner_destroy/{banner}',[BannerController::class,'destroy'])->middleware('auth')->name('banner_destroy');
+
+
+Route::get('/search-menu', 'MenuController@search')->name('search_menu');
+
+Route::get('/view_category',[CategoryController::class,'show'])->middleware('auth')->name('view_category');
+Route::get('/create_category',[CategoryController::class,'create'])->middleware('auth')->name('create_category');
+Route::post('/category_store',[CategoryController::class,'store'])->middleware('auth')->name('category_store');
+Route::get('/edit_banner/{banner}', [CategoryController::class,'edit'])->middleware('auth')->name('edit_banner');
+Route::put('/update_banner/{banner}', [CategoryController::class,'update'])->middleware('auth')->name('update_banner');
+Route::delete('/category_destroy/{category}',[CategoryController::class,'destroy'])->middleware('auth')->name('category_destroy');
+
+
+Route::get('/view_category_menu',[CategoryMenuController::class,'show'])->middleware('auth')->name('view_category_menu');
+Route::get('/create_category_menu',[CategoryMenuController::class,'create'])->middleware('auth')->name('create_category_menu');
+Route::post('/category_menu_store',[CategoryMenuController::class,'store'])->middleware('auth')->name('category_menu_store');
+Route::delete('/category_menu_destroy/{category_menu}',[CategoryController::class,'destroy'])->middleware('auth')->name('category_menu_destroy');
+
+
+Route::get('/view_true_menu',[CategoryMenuController::class,'showtrue'])->middleware('auth')->name('view_true_menu');
+
+Route::group(['middleware'=>'Admin','prefix'=> 'Admin','as'=>'Admin'], function () {
+
+});
+
+
