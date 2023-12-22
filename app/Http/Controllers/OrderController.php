@@ -21,7 +21,7 @@ class OrderController extends Controller
     public function store(Request $request, Menu $menu){
         $validateData=$request->validate([
             'tanggal'=>'required|max:255',
-            'location'=>'required|max:255',
+            'location'=>'required|string',
             'quantity'=>'required',
         ]);
         $ongoingStatus = Status::where('status', 'ongoing')->first();
