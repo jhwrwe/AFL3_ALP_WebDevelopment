@@ -18,7 +18,7 @@ class ReviewController extends Controller
     public function store(Request $request,Menu $menu){
         $validateData=$request->validate([
             'title'=>'required|max:255',
-            'description'=>'required|max:255',
+            'description'=>'required|string',
         ]);
             Review::create([
                 'title'=> $validateData['title'],

@@ -465,7 +465,6 @@
     </div>
 
     <footer>
-        <!-- Footer content goes here -->
         <footer class="bg-2 text-center text-lg-start text-muted">
             <!-- ... (unchanged footer content) ... -->
         </footer>
@@ -513,6 +512,7 @@
     </script>
 
 </body>
+
 
 </html>
 
