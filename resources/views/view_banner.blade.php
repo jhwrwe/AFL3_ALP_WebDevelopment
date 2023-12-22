@@ -147,28 +147,9 @@
                             <button class="btn btn-danger" id="delete" name="delete">Delete</button>
                         </form>
                     </div>
-                    <img src="src="{{ asset('storage/' . $pro['photo']) }}" alt="{{ $pro->name }}" class="img-fluid">
-
-
-                </td>
-                <td>{{ $pro['starting_time'] }}</td>
-                <td>{{ $pro['Ending_time'] }}</td>
-                <td>
-                    <a href="{{ route('edit_banner',$pro) }}">
-                        <button class="btn btn-info" id="edit_banner" name="edit_banner">edit</button>
-                    </a>
-                    <form action="{{ route('banner_destroy', $pro) }}" method="POST">
-                        @method('delete')
-                        @csrf
-                        <button class="btn btn-danger" id="delete" name="delete">Delete</button>
-                    </form>
-                </td>
-
+                </div>
+            </div>
     @endforeach
-</table>
-
-<div>
-
-</div>
+    </div>
     <br>
 @endsection

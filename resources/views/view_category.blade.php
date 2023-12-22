@@ -216,9 +216,6 @@
             <td>{{ $pro['name'] }}</td>
             <td>{{ $pro['description'] }}</td>
             <td>
-                <a href="{{ route('edit_menu', $pro) }}">
-                    <button class="btn btn-info" id="edit" name="edit">Edit</button>
-                </a>
                 <form action="{{ route('category_destroy', $pro) }}" method="POST">
                     @method('delete')
                     @csrf
