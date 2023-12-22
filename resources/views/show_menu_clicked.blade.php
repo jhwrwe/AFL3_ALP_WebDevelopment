@@ -133,22 +133,24 @@
                     </tr>
                 @endif
             @endforeach
-        </tbody>
-    </table>
+        </table>
+        @if(Auth::user()->isUser())
+            <div class ="contaianer mt-5">
+              <form action="{{ route('store_review',$menu) }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">title</label>
+                <input type="text" class="form-control" id="title" name ="title" placeholder="Your title">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">description</label>
+                <input type="text" class="form-control" id="description" name ="description" placeholder="Your price">
+              </div>
 
-    <div class="container-form mt-5">
-        <form action="{{ route('store_review', $menu) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Enter your title">
+              </div>
+              <button type ="submit" class="btn btn-primary">submit</button>
+              </form>
             </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <input type="text" class="form-control" id="description" name="description"
-                    placeholder="Enter your description">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+            @endif
+
 @endsection
