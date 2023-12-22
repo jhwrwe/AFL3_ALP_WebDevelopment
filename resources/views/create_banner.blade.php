@@ -38,6 +38,7 @@
             border-radius: 10px;
             /* Adjust the border-radius to make the underline rounded */
         }
+
         .btn-primary {
             color: #cfac89;
             background-color: #42332e;
@@ -61,7 +62,8 @@
                 @csrf
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Nama Banner</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan Nama Banner">
+                    <input type="text" class="form-control" id="name" name="name"
+                        placeholder="Masukkan Nama Banner">
                 </div>
 
                 <div class="mb-3">
