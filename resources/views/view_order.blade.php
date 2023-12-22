@@ -10,15 +10,12 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
           <div>
-            <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
+            <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">time <i
                   class="fas fa-angle-down mt-1"></i></a></p>
           </div>
         </div>
 
-        <form action="/view_menu" method="GET" class="form-inline w-100 d-flex gap-2 mb-4">
-          <input class="form-control" type="search" name="search" placeholder="Search">
-          <button type="submit" class="btn btn-outline-success">Search</button>
-        </form>
+
 
         <table class="table table-striped">
           <tr>
