@@ -170,23 +170,18 @@
                     </h3>
                     <p class="text-gray-600 mb-8">
                         1. Tanpa Pengawet: Kami hanya menggunakan bahan-bahan alami dan segar yang diolah dengan higienis.
-                        Hal ini untuk menjamin kualitas dan kesegaran produk kami.
                     </p>
                     <p class="text-gray-600 mb-8">
-                        2. Harga terjangkau: Kami menawarkan harga yang terjangkau dan bersaing. Kami juga memberikan diskon
-                        dan promo menarik.
+                        2. Harga terjangkau: Kami menawarkan harga yang terjangkau dan bersaing.
                     </p>
                     <p class="text-gray-600 mb-8">
                         3. Bervariasi: Kami memiliki berbagai macam varian produk yang dapat memenuhi selera dan kebutuhan
-                        pelanggan. Kami dapat menyesuaikan rasa, bentuk, ukuran, dan topping sesuai dengan keinginan
                         pelanggan.
                     </p>
                     <p class="text-gray-600 mb-8">
                         4. Pesanan Khusus: Kami melayani pesanan khusus untuk acara-acara tertentu, seperti ulang tahun,
-                        pernikahan, atau pesta. Kami dapat membuat roti dan kue dengan tema dan desain yang unik dan
-                        menarik.
+                        pernikahan, atau pesta.
                     </p>
-
                 </div>
 
             </div>
