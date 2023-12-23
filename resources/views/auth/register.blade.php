@@ -2,14 +2,22 @@
 
 @section('layout_content')
     <style>
-        .mojito {
-            background-color: #fbfff4;
+         .btn-primary {
+            color: #cfac89;
+            background-color: #42332e;
+            border: #cfac89 solid 1px;
+        }
+
+        .btn-primary:hover {
+            color: #42332e;
+            background-color: #cfac89;
+            border: #42332e solid 1px;
         }
     </style>
     {{-- <section class="vh-100 bg-image"
         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');"> --}}
 
-    <div class="mask d-flex align-items-center h-100 mojito">
+    <div class="mask d-flex align-items-center h-100">
         <div class="container h-100">
             <br>
             <br>

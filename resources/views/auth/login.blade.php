@@ -2,11 +2,19 @@
 
 @section('layout_content')
     <style>
-        .mojito {
-            background: #fbfff4;
+        .btn-primary {
+            color: #cfac89;
+            background-color: #42332e;
+            border: #cfac89 solid 1px;
+        }
+
+        .btn-primary:hover {
+            color: #42332e;
+            background-color: #cfac89;
+            border: #42332e solid 1px;
         }
     </style>
-    <div class="mask d-flex align-items-center h-100 mojito">
+    <div class="mask d-flex align-items-center h-100">
 
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -85,4 +93,5 @@
         </div>
     </div>
     </div>
+    <br>
 @endsection

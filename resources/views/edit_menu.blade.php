@@ -38,11 +38,23 @@
         border-radius: 10px;
         /* Adjust the border-radius to make the underline rounded */
     }
+    .btn-primary {
+        width: 70px;
+            color: #cfac89;
+            background-color: #42332e;
+            border: #cfac89 solid 1px;
+        }
+
+        .btn-primary:hover {
+            color: #42332e;
+            background-color: #cfac89;
+            border: #42332e solid 1px;
+        }
 </style>
 <div>
     <div class="mb-3 menu-title-container">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800 menu-title">
-            Tambah Kategori
+            Edit Menu
         </h1>
     </div>
 <div class="container mt-5">
@@ -81,7 +93,7 @@
                 @endforeach
             </select>
         </div> --}}
-        <button type="submit" class="btn btn-primary">Kirim</button>
+        <button type="submit" class="btn btn-primary">Edit</button>
     </form>
 </div>
 
