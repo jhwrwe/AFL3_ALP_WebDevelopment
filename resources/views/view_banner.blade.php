@@ -26,7 +26,8 @@
             background: #feeedd;
             border-radius: 8px;
             padding: 20px;
-            width: 48%; /* Adjust the width to fit two elements per row */
+            width: 48%;
+            /* Adjust the width to fit two elements per row */
             margin-bottom: 10px;
             display: flex;
             align-items: center;
@@ -39,11 +40,14 @@
             border-radius: 20px;
             margin-right: 20px;
         }
+
         @media (max-width: 768px) {
-        .product {
-            width: 100%; /* Set the width to 100% to stack elements vertically on smaller screens */
+            .product {
+                width: 100%;
+                /* Set the width to 100% to stack elements vertically on smaller screens */
+            }
         }
-    }
+
         .product-info {
             flex-grow: 1;
         }
@@ -65,6 +69,7 @@
             background-color: #c47647;
             border-color: #c47647;
         }
+
         .btn-info:hover {
             color: white;
             background-color: #30d621;
@@ -82,6 +87,7 @@
             background-color: #42332e;
             /* Change the background color */
         }
+
         .tambah-button:hover {
             color: #42332e;
             background-color: #cfac89;
@@ -111,45 +117,49 @@
             border-radius: 10px;
         }
     </style>
-    <div class="mt-5 mb-5 menu-title-container">
-        <h1 class="w-full my-2 text-6xl font-bold leading-tight text-center text-gray-800 menu-title">
-            List Banner
-        </h1>
-    </div>
-    <div class="text-center">
-        <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group me-2" roles="group" aria-label="Basic Example">
-                <form method="GET" action="{{ route('create_banner') }}">
-                    <button class="btn tambah-button" href="{{ route('create_banner') }}">
-                        Tambah
-                    </button>
-                </form>
-            </div>
+    <div>
+        <div class="mt-5 mb-5 menu-title-container">
+            <h1 class="w-full my-2 text-6xl font-bold leading-tight text-center text-gray-800 menu-title">
+                List Banner
+            </h1>
         </div>
-    </div>
-
-    <div class="product-container">
-        @foreach ($banner as $pro)
-            <div class="product">
-                <img class="img-info" src="{{ asset('storage/' . $pro['photo']) }}" alt="{{ $pro->name }}">
-                <div class="product-info">
-                    <h3>{{ $pro['name'] }}</h3>
-                    <p>{{ $pro['starting_time'] }}</p>
-                    <p>{{ $pro['Ending_time'] }}</p>
-                    <div>
-                        <a href="{{ route('edit_banner', $pro) }}">
-                            <button class="btn btn-info" id="edit" name="edit">Edit</button>
-                        </a>
-                        <form action="{{ route('banner_destroy', $pro) }}" method="POST">
-                            @method('delete')
-                            @csrf
-                            <br>
-                            <button class="btn btn-danger" id="delete" name="delete">Delete</button>
-                        </form>
-                    </div>
+        <div class="text-center">
+            <div class="btn-group" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group me-2" roles="group" aria-label="Basic Example">
+                    <form method="GET" action="{{ route('create_banner') }}">
+                        <button class="btn tambah-button" href="{{ route('create_banner') }}">
+                            Tambah
+                        </button>
+                    </form>
                 </div>
             </div>
-    @endforeach
+        </div>
+
+        <div class="product-container">
+            @foreach ($banner as $pro)
+                <div class="product">
+                    <img class="img-info" src="{{ asset('storage/' . $pro['photo']) }}" alt="{{ $pro->name }}">
+                    <div class="product-info">
+                        <h3>{{ $pro['name'] }}</h3>
+                        <p>{{ $pro['starting_time'] }}</p>
+                        <p>{{ $pro['Ending_time'] }}</p>
+                        <div>
+                            <a href="{{ route('edit_banner', $pro) }}">
+                                <button class="btn btn-info" id="edit" name="edit">Edit</button>
+                            </a>
+                            <form action="{{ route('banner_destroy', $pro) }}" method="POST">
+                                @method('delete')
+                                @csrf
+                                <br>
+                                <button class="btn btn-danger" id="delete" name="delete">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
+    </div>
+    <br>
     <br>
 @endsection
