@@ -110,6 +110,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
+                    </li>
                     @auth
                         @if (Auth::user()->isAdmin())
                             <li class="nav-item">
@@ -142,9 +145,7 @@
                     @endauth
 
 
-                    <li class="nav-item">
-                        <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
-                    </li>
+
 
                 </ul>
                 <!-- Right Side Of Navbar -->
