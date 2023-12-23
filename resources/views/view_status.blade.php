@@ -209,12 +209,10 @@
             <th>NO</th>
             <th>status_id</th>
             <th>status</th>
-            <th>description</th>
-            <th>photo</th>
-            <th>actions</th>
+            <th>Actions</th>
         </tr>
         @foreach ($projects as $pro)
-            <tr>
+            <tr>    
                 <td>{{ $loop->index + 1 }}</td>
                 <td>{{ $pro['id'] }}</a></td>
                 <td>{{ $pro['status'] }}</td>
