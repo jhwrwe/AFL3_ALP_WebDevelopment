@@ -18,7 +18,6 @@ class MenuController extends Controller
         return view('create_menu',compact('Extracurricular'));
     }
     public function store(Request $request){
-
         $validateData=$request->validate([
             'name'=>'required|max:255',
             'price'=> 'required|integer',

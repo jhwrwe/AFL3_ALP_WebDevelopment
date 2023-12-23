@@ -27,7 +27,7 @@
 
                     <table class="table table-striped">
                         <tr>
-                            @if (Auth::user()->isAdmin() && Auth::user()->isStaff())
+                            @if (Auth::user()->isAdmin() || Auth::user()->isStaff())
                                 <th>Nama user</th>
                             @endif
                             <th>Tanggal</th>
@@ -35,7 +35,7 @@
                             <th>Nama</th>
                             <th>Harga</th>
                             <th>Status</th>
-                            @if (Auth::user()->isAdmin() && Auth::user()->isStaff())
+                            @if (Auth::user()->isAdmin() || Auth::user()->isStaff())
                                 <th>Actions</th>
                             @endif
                         </tr>
@@ -84,7 +84,7 @@
                                     @endif
                                 </tr>
                             @else
-                                @if (Auth::user()->isAdmin()&& Auth::user()->isStaff())
+                                @if (Auth::user()->isAdmin()|| Auth::user()->isStaff())
                                     <tr>
                                         <td>
                                             {{ $order_menu_item->order->user->name }}

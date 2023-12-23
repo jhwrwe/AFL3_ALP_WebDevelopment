@@ -94,7 +94,7 @@ Route::delete('/category_destroy/{category}',[CategoryController::class,'destroy
 Route::get('/view_category_menu',[CategoryMenuController::class,'show'])->middleware('Admin')->name('view_category_menu');
 Route::get('/create_category_menu',[CategoryMenuController::class,'create'])->middleware('Admin')->name('create_category_menu');
 Route::post('/category_menu_store',[CategoryMenuController::class,'store'])->middleware('Admin')->name('category_menu_store');
-Route::delete('/category_menu_destroy/{category_menu}',[CategoryController::class,'Admin'])->middleware('auth')->name('category_menu_destroy');
+Route::delete('/category_menu_destroy/{category_menu}',[CategoryMenuController::class,'destroy'])->middleware('auth')->name('category_menu_destroy');
 
 
 Route::get('/view_true_menu',[CategoryMenuController::class,'showtrue'])->middleware('auth')->name('view_true_menu');

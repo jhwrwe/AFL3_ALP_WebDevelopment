@@ -71,7 +71,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Deskripsi</label>
-                    <input type="text" class="form-control" id="Description" name="Description"
+                    <input type="text" class="form-control" id="description" name="description"
                         placeholder="Masukkan Deskripsi Produk">
                 </div>
                 <div class="mb-3">
