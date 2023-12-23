@@ -186,7 +186,6 @@
                         pernikahan, atau pesta. Kami dapat membuat roti dan kue dengan tema dan desain yang unik dan
                         menarik.
                     </p>
-                    <img src="/image/Keunggulan.png" alt="GUmum" class="custom-image-size">
 
                 </div>
 

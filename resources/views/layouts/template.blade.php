@@ -141,7 +141,6 @@
                         </li>
                     @endauth
 
-
                     <li class="nav-item">
                         <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
                     </li>
