@@ -56,7 +56,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Deskripsi</label>
-                <input type="text" class="form-control" id="description" name="Masukkan Deskripsi Kategori"
+                <input type="text" class="form-control" id="description" name="description"
                     placeholder="Your description">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

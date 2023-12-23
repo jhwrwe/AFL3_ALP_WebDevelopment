@@ -146,7 +146,7 @@
                 <label for="exampleFormControlInput1" class="form-label">Jumlah</label>
                 <div class="input-group">
                     <button type="button" class="btn btn-outline-secondary" id="minus-btn">-</button>
-                    <input type="text" class="form-control" id="quantity" name="Kuantitas" value="1" readonly>
+                    <input type="text" class="form-control" id="quantity" name="quantity" value="1" readonly>
                     <button type="button" class="btn btn-outline-secondary" id="plus-btn">+</button>
                 </div>
             </div>

@@ -113,9 +113,6 @@
                     @auth
                         @if (Auth::user()->isAdmin())
                             <li class="nav-item">
-                                <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_status">Status Order</a>
                             </li>
                             <li class="nav-item">
@@ -134,9 +131,6 @@
                         @if (Auth::user()->isAdmin() || Auth::user()->isStaff())
                         @endif
                         @if (Auth::user()->isUser())
-                            <li class="nav-item">
-                                <a class="nav-link {{ $ActiveAbout ?? '' }}" href="/index">Home</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_true_menu">Menu</a>
                             </li>

@@ -24,7 +24,7 @@ class CategoryController extends Controller
                 'description'=> $validateData['description'],
             ]);
 
-        return redirect()->route('index');
+        return redirect()->route('view_category');
     }
     public function edit(Category $category){
         $CategoryEdit = Category::where('id',$category->id)->first();

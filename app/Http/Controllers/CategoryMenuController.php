@@ -32,8 +32,8 @@ class CategoryMenuController extends Controller
         // $Extracurricular = Extracurricular::all();
         return view('edit_menu',['CategoryEdit' => $CategoryEdit]);
     }
-    public function destroy(Category_menu $category){
-        $category->delete();
+    public function destroy(Category_menu $category_menu){
+        $category_menu->delete();
         return redirect()->route('view_category_menu');
     }
     public function update(Request $request,Category_menu $category){
