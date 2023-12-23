@@ -19,6 +19,8 @@
 
             // Add class to body on page load
             body.classList.add('pre-scroll');
+
+
             window.addEventListener("scroll", function() {
                 // Check if the user has started scrolling
                 if (window.scrollY > 0) {
@@ -31,6 +33,21 @@
                     navbar.classList.remove('bg-scrolled', 'fixed-top');
                     navbar.classList.add('bg-unscrolled')
                 }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            const navItems = document.querySelectorAll('.navbar-nav .nav-item');
+
+            navItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.classList.add('hovered');
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    this.classList.remove('hovered');
+                });
             });
         });
     </script>
@@ -94,6 +111,39 @@
         .navbar-toggler-icon {
             transition: background-color 0.3s ease;
         }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-nav .nav-item {
+            border-radius: 15px;
+            /* Adjust the value for the desired roundness */
+            overflow: hidden;
+            margin: 0 5px;
+            /* Add margin for spacing between items */
+        }
+
+        .navbar-nav .nav-link {
+            display: block;
+            /* Adjust padding as needed */
+            border-radius: inherit;
+            /* Inherit the border-radius from the parent (.nav-item) */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Add smooth transition */
+        }
+
+        .navbar-nav .nav-item:hover,
+        .navbar-nav .nav-item.hovered {
+            background-color: #98644F !important;
+        }
+
+        .navbar-nav .nav-item:hover .nav-link,
+        .navbar-nav .nav-item.hovered .nav-link {
+            color: #CFAC89 !important;
+        }
     </style>
 
 </head>
@@ -137,15 +187,15 @@
                             <li class="nav-item">
                                 <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_true_menu">Menu</a>
                             </li>
-
                         @endif
                         <li class="nav-item">
                             <a class="nav-link {{ $ActiveAFL1 ?? '' }}" href="/view_order">Keranjang</a>
                         </li>
                     @endauth
 
-
-
+                    <li class="nav-item">
+                        <a class="nav-link {{ $ActiveAbout ?? '' }} nav-item-hover" href="/index">Home</a>
+                    </li>
 
                 </ul>
                 <!-- Right Side Of Navbar -->

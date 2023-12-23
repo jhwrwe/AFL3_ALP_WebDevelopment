@@ -4,6 +4,28 @@
     footer h6 {
         color: #CFAC89;
     }
+    .btn-block {
+            color: #cfac89;
+            background-color: #42332e;
+            border: #cfac89 solid 1px;
+        }
+
+        .btn-block:hover {
+            color: #42332e;
+            background-color: #cfac89;
+            border: #42332e solid 1px;
+        }
+        .btn-info {
+            color: #cfac89;
+            background-color: #42332e;
+            border: #cfac89 solid 1px;
+        }
+
+        .btn-info:hover {
+            color: #42332e;
+            background-color: #cfac89;
+            border: #42332e solid 1px;
+        }
 </style>
 
 @section('layout_content')

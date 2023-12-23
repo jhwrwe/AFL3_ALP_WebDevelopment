@@ -39,6 +39,98 @@
         }
 
         .classic-description {
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .classic-image {
+            width: 30%;
+            padding-left: 20px;
+        }
+
+        .classic-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Adjusted styling for Keunggulan section */
+        .keunggulan-section {
+            display: flex;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .keunggulan-text {
+            width: 40%;
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+
+        .keunggulan-description {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .keunggulan-image {
+            width: 60%;
+            padding-left: 20px;
+        }
+
+        .keunggulan-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Additional styling for Visi dan Misi section */
+        .visi-misi-section {
+            background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+            color: #fff;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .visi-misi-section h2 {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .visi-misi-section:before,
+        .visi-misi-section:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-color: #d53369;
+            z-index: -1;
+        }
+
+        .visi-misi-section:before {
+            left: 0;
+        }
+
+        .visi-misi-section:after {
+            right: 0;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 500px; /* Adjust as needed */
+            object-fit: cover;
+            .classic-section {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, #cfac89, #98644f, #42332e);
+            color: #fff;
+            padding: 60px;
+        }
+
+        .classic-text {
+            width: 40%;
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+
+        .classic-description {
             font-size: 1.2rem;
             margin-top: 20px;
         }
@@ -110,6 +202,19 @@
 
         .visi-misi-section:after {
             right: 0;
+        }
+
+        .visi-misi-border {
+            border: 2px solid #fff;
+            padding: 20px;
+            position: relative;
+            background-color: transparent;
+        }
+
+        .visi-misi-border h3 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .carousel-inner img {
@@ -230,8 +335,7 @@
                         <li class="border-b py-4">Menyediakan layanan yang mudah, cepat, dan aman bagi sekolah untuk mencari
                             dan merekrut guru yang sesuai dengan kriteria mereka.</li>
                         <li class="border-b py-4">Menyediakan insentif dan penghargaan bagi guru yang berprestasi dan
-                            berdedikasi tinggi.
-                        </li>
+                            berdedikasi tinggi.</li>
                     </ul>
                 </div>
             </div>
@@ -241,5 +345,4 @@
 </body>
 
 </html>
-
 @endsection
