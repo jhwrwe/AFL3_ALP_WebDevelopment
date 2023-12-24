@@ -24,7 +24,8 @@ use App\Livewire\SearchMenu;
 |
 */
 
-Route::get('/', [BannerController::class,'index'] );
+Route::get('/', function () { return view('homepage');  });
+// Route::get('/home', [HomeController::class,'indexq']);
 
 
 
@@ -56,7 +57,7 @@ Auth::routes();
 Route::post('/store_review/{menu}',[ReviewController::class,'store'])->middleware('auth')->name('store_review');
 Route::get('/edit/{review}', [MenuController::class,'edit'])->middleware('auth')->name('edit_review');
 Route::delete('/review_destroy/{review}',[ReviewController::class,'destroy'])->middleware('auth')->name('review_destroy');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'indexq'])->name('home');
 
 Route::post('/order_store/{menu}',[OrderController::class,'store'])->middleware('auth')->name('order_store');
 Route::get('/order_menu_view/{id}',[MenuController::class,'ordered2'])->middleware('auth')->name('order_menu_view');

@@ -94,6 +94,11 @@
         .navbar-toggler-icon {
             transition: background-color 0.3s ease;
         }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
     </style>
 
 </head>
