@@ -230,10 +230,6 @@
                             <h6 class="text-uppercase fw-bold mb-4">
                                 <i class="fas fa-gem me-3"></i>Classic Cake and Bread
                             </h6>
-                            <p>
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
-                            </p>
                         </div>
                         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <!-- Links -->
@@ -253,9 +249,9 @@
                             <p><i class="fas fa-home me-3"></i> Lombok, Indonesia</p>
                             <p>
                                 <i class="fas fa-envelope me-3"></i>
-                                info@gmail.com
+                                @fifian_kitchen88
                             </p>
-                            <p><i class="fas fa-phone me-3"></i> + 62 811 234 567</p>
+                            <p><i class="fas fa-phone me-3"></i> + 62 819 331 520 07</p>
                         </div>
                     </div>
                 </div>

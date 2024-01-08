@@ -177,7 +177,6 @@
     </table>
 
     <div>
-        {{ $projects->links() }}
     </div>
     </div>
     <br>
