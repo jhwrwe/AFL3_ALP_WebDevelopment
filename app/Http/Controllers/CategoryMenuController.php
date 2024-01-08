@@ -52,7 +52,7 @@ class CategoryMenuController extends Controller
         if($request->has('search')){
             $projek = Category_menu::where('name','LIKE','%'.$request->search.'%')->orWhere('description','LIKE','%'.$request->search.'%')->paginate(5)-> withQueryString();
         }else{
-            $projek = Category_menu::paginate(5);
+            $projek = Category_menu::all();
         }
         return view('view_category_menu',[
             "pagetitle" => "projek",
