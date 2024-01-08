@@ -38,14 +38,9 @@
                         <h3 class="fw-normal mb-0 text-black">Keranjang Belanja</h3>
                         <div>
                             <p class="mb-0"><span class="text-muted">Urutkan Berdasarkan:</span> <a href="#!"
-                                    class="text-body">Harga <i class="fas fa-angle-down mt-1"></i></a></p>
+                                    class="text-body">Pertama <i class="fas fa-angle-down mt-1"></i></a></p>
                         </div>
                     </div>
-
-                    <form action="/view_menu" method="GET" class="form-inline w-100 d-flex gap-2 mb-4">
-                        <input class="form-control" type="search" name="search" placeholder="Cari Barang">
-                        <button type="submit" class="btn btn-outline-success">Cari</button>
-                    </form>
 
                     <table class="table table-striped">
                         <tr>
@@ -150,6 +145,7 @@
                     </table>
 
                     <!-- Move the div outside the foreach loop -->
+                    @if (Auth::user()->isUser())
                     <div class="card">
                         <div class="card-body">
                             <a href="https://wa.me/62933152007">
@@ -157,6 +153,7 @@
                             </a>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
