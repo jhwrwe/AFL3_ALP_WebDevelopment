@@ -105,8 +105,37 @@
             background: linear-gradient(to right, #cfac89, #98644f, #42332e);
             border-radius: 10px;
         }
-    </style>
+        @media (max-width: 1000px) {
+            .product-container {
+                justify-content: center;
+            }
 
+            .product {
+                width: 100%;
+            }
+        }
+    </style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all product elements
+        var products = document.querySelectorAll('.product');
+
+        // Add a click event listener to each product element
+        products.forEach(function (product) {
+            product.addEventListener('click', function () {
+                // Move the clicked product to the bottom
+                this.style.order = products.length;
+                // Set order for other products
+                products.forEach(function (otherProduct, index) {
+                    if (otherProduct !== product) {
+                        otherProduct.style.order = index + 1;
+                    }
+                });
+            });
+        });
+    });
+
+</script>
     <div class="container mt-5 mb-5">
         <div class="menu-title-container">
             <h1 class="w-full my-2 text-6xl font-bold leading-tight text-center text-gray-800 menu-title">

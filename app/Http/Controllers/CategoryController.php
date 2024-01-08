@@ -51,7 +51,7 @@ class CategoryController extends Controller
         if($request->has('search')){
             $projek = Category::where('name','LIKE','%'.$request->search.'%')->orWhere('description','LIKE','%'.$request->search.'%')->paginate(5)-> withQueryString();
         }else{
-            $projek = Category::paginate(5);
+            $projek = Category::all();
 
         }
         return view('view_category',[

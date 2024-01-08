@@ -203,24 +203,7 @@
             <img src="/image/Classic.png" alt="Klasik">
         </div>
     </section>
-
-    <!-- Keunggulan Section -->
-    <section class="shared-section keunggulan-section">
-        <div class="section-text">
-            <h3 class="text-3xl font-bold mb-3">Keunggulan Kami</h3>
-            <p class="section-description">
-                Kami bangga menyajikan produk tanpa pengawet, dengan bahan-bahan alami dan segar yang diolah dengan
-                higienis untuk menjamin kualitas dan kesegaran. Harga terjangkau, promo menarik, dan berbagai varian
-                produk siap memenuhi selera Anda. Pesan khusus untuk acara spesial? Kami siap memberikan sentuhan unik
-                dan lezat pada roti dan kue sesuai tema yang Anda inginkan.
-            </p>
-        </div>
-        <div class="section-image pl-2">
-            <img src="/image/Keunggulan.png" alt="Keunggulan">
-        </div>
-    </section>
-
-    <!-- Visi dan Misi Section -->
+    <br>
     <h2 class="text-center mb-4 p-4">Visi dan Misi</h2>
     <div class="container p-4 text-center d-flex justify-content-center">
 
@@ -249,6 +232,27 @@
             </div>
         </div>
     </div>
+    <br>
+    <!-- Keunggulan Section -->
+    <section class="shared-section keunggulan-section">
+        <div class="section-text">
+            <h3 class="text-3xl font-bold mb-3">Keunggulan Kami</h3>
+            <p class="section-description">
+                Kami bangga menyajikan produk tanpa pengawet, dengan bahan-bahan alami dan segar yang diolah dengan
+                higienis untuk menjamin kualitas dan kesegaran. Harga terjangkau, promo menarik, dan berbagai varian
+                produk siap memenuhi selera Anda. Pesan khusus untuk acara spesial? Kami siap memberikan sentuhan unik
+                dan lezat pada roti dan kue sesuai tema yang Anda inginkan.
+            </p>
+        </div>
+        <div class="section-image pl-2">
+            <img src="/image/Keunggulan.png" alt="Keunggulan">
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <!-- Visi dan Misi Section -->
+
 
 
 

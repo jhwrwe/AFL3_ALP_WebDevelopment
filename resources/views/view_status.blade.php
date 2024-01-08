@@ -212,7 +212,7 @@
             <th>Actions</th>
         </tr>
         @foreach ($projects as $pro)
-            <tr>    
+            <tr>
                 <td>{{ $loop->index + 1 }}</td>
                 <td>{{ $pro['id'] }}</a></td>
                 <td>{{ $pro['status'] }}</td>
@@ -242,7 +242,6 @@
 
 
     <div>
-        {{ $projects->links() }}
     </div>
 </div>
     <br>

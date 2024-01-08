@@ -109,16 +109,16 @@
         <section class="container">
             <div class="row">
                 <div class="col-md-12 pt-3">
-                    <h2><span style="color: #ffc107; font-weight: 700;">Classic</span> Restaurant</h2>
+                    <h2><span style="color: #ffc107; font-weight: 700;">Classic</span> Bakery</h2>
                     <p>Indulge in the <span style="font-weight: 700;">exceptional flavors</span> and
                         <span style="color: #ffc107; font-weight: 700;">elegant ambiance </span> and the harmony </p>
-                    <p> of our <span style="color: #ffc107; font-weight: 700;"> Classic</span> restaurant <a href="/index" class="btn btn-light" style="color: #ffc107; font-weight: 700">Explore More</a> of our exceptional cuisine</p>
+                    <p> of our <span style="color: #ffc107; font-weight: 700;"> Classic</span> bakery <a href="/index" class="btn btn-light" style="color: #ffc107; font-weight: 700">Explore More</a> of our exceptional cuisine</p>
                 </div>
             </div>
         </section>
 
         <footer>
-            &copy; 2023 Classic Restaurant
+            &copy; 2023 Classic Bakery
         </footer>
     </div>
 

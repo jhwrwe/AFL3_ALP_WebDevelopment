@@ -89,7 +89,7 @@ class MenuController extends Controller
         if($request->has('search')){
             $projek = Menu::where('name','LIKE','%'.$request->search.'%')->orWhere('description','LIKE','%'.$request->search.'%')->paginate(5)-> withQueryString();
         }else{
-            $projek = Menu::paginate(5);
+            $projek = Menu::all();
         }
         return view('view_menu',[
             "pagetitle" => "projek",
